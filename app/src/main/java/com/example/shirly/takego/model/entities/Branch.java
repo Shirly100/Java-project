@@ -4,19 +4,15 @@ package com.example.shirly.takego.model.entities;
  * Created by Shirly on 11/12/2017.
  */
 
-public class Branch
+public class Branch extends Address
 {
-    private Address address;
+
     private  int parking_spacees;
     private  int branchNumber;
 
-    public Address getAddress() {
-        return address;
-    }
 
-    public void setAddress(Address address) {
-        this.address = address;
-    }
+
+
 
     public int getParking_spacees() {
         return parking_spacees;

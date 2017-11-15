@@ -6,16 +6,16 @@ package com.example.shirly.takego.model.entities;
 
 public class Car
 {
-    private String branchNumber;
+    private int branchNumber;
     private String modelType;
     private float mileage;
     private long carNumber;
 
-    public String getBranchNumber() {
+    public int getBranchNumber() {
         return branchNumber;
     }
 
-    public void setBranchNumber(String branchNumber) {
+    public void setBranchNumber(int branchNumber) {
         this.branchNumber = branchNumber;
     }
 

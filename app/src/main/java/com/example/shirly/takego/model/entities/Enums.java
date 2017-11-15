@@ -6,6 +6,6 @@ package com.example.shirly.takego.model.entities;
 
 public class Enums
 {
-    public enum Gear {  AUTOMATIC, Manual};
+    public enum Gear {  AUTOMATIC, MANUAL};
     public enum Order {OPEN,CLOSE};
 }

@@ -30,7 +30,7 @@ public class Order
         return order;
     }
 
-    public void setOrder(Enums.Order order) {
+    public void setOrder(Enums.Order  order) {
         this.order = order;
     }
 

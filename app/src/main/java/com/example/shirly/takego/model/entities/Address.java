@@ -1,11 +1,12 @@
 package com.example.shirly.takego.model.entities;
 
+import android.content.ContentValues;
+
 /**
  * Created by Shirly on 11/12/2017.
  */
 
-public class Address
-{
+public class Address {
     private String city;
     private String street;
     private int number;
@@ -34,3 +35,6 @@ public class Address
         this.number = number;
     }
 }
+
+
+
