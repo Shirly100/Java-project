@@ -2,10 +2,13 @@ package com.example.shirly.takego.controller;
 
 import android.app.Activity;
 import android.content.ContentValues;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
 
 import com.example.shirly.takego.R;
 import com.example.shirly.takego.model.backend.CarConst;
@@ -20,20 +23,14 @@ private EditText IDEditText;
 private EditText mailEditText;
 private EditText cardNumberEditText;
 private Button addClientButton;
-private void findViews() {
-    lastNameEditText = (EditText)findViewById( R.id.lastNameEditText );
-    firstNameEditText = (EditText)findViewById( R.id.firstNameEditText );
-    phoneNumberEditText = (EditText)findViewById( R.id.phoneNumberEditText );
-    IDEditText = (EditText)findViewById( R.id.IDEditText);
-    mailEditText = (EditText)findViewById( R.id.mailEditText);
-    cardNumberEditText= (EditText)findViewById( R.id.cardNumberEditText);
-    addClientButton = (Button)findViewById( R.id.addClientButton );
-    addClientButton.setOnClickListener( this );     }
+
 
     @Override
     public void onClick(View v) {
         if ( v == addClientButton )
-        {              addClient();         }     }
+        {              addClient();
+        }
+    }
 
 
         @Override
@@ -57,6 +54,17 @@ private void findViews() {
             factory_dal.get_dal().addClient(contentValues);       }
         catch (Exception e) {}
         }
+
+    private void findViews() {
+        lastNameEditText = (EditText)findViewById( R.id.lastNameEditText );
+        firstNameEditText = (EditText)findViewById( R.id.firstNameEditText );
+        phoneNumberEditText = (EditText)findViewById( R.id.phoneNumberEditText );
+        IDEditText = (EditText)findViewById( R.id.IDEditText);
+        mailEditText = (EditText)findViewById( R.id.mailEditText);
+        cardNumberEditText= (EditText)findViewById( R.id.cardNumberEditText);
+        addClientButton = (Button)findViewById( R.id.addClientButton );
+        addClientButton.setOnClickListener( this );     }
+
 
 
 

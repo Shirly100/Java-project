@@ -1,5 +1,6 @@
 package com.example.shirly.takego.controller;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,7 +9,7 @@ import android.widget.Button;
 
 import com.example.shirly.takego.R;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener
+public class MainActivity extends Activity implements View.OnClickListener
 {
 
     private Button addClientButton;
@@ -47,10 +48,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
 
 
-    @Override     public void onClick(View v) {
+    @Override
+    public void onClick(View v) {
         if ( v == addClientButton ) {
             addClient();// Handle clicks for addStudentButton
             } /*else if ( v == addCarModelButton ) {
