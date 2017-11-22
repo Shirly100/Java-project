@@ -81,9 +81,9 @@ public class CarConst
     public static ContentValues BranchToContentValues(Branch branch) {
 
         ContentValues contentValues = new ContentValues();
-        contentValues.put(BranchConst.CITY, branch.getCity());
-        contentValues.put(BranchConst.STREET,branch.getStreet());
-        contentValues.put(BranchConst.NUMBER, branch.getNumber());
+        contentValues.put(BranchConst.CITY, branch.getAddress().getCity());
+        contentValues.put(BranchConst.STREET,branch.getAddress().getStreet());
+        contentValues.put(BranchConst.NUMBER, branch.getAddress().getNumber());
         contentValues.put(BranchConst.PARKING, branch.getParking_spacees());
         contentValues.put(BranchConst.BRANCH_NAME, branch.getBranchNumber());
 
@@ -168,9 +168,9 @@ public class CarConst
     public static Branch ContentValuesToBranch(ContentValues contentValues) {
 
         Branch branch = new Branch();
-        branch.setCity(contentValues.getAsString(CarConst.BranchConst.CITY));
-        branch.setStreet(contentValues.getAsString(CarConst.BranchConst.STREET));
-        branch.setNumber(contentValues.getAsInteger(CarConst.BranchConst.NUMBER));
+        branch.setAddressCity((contentValues.getAsString(CarConst.BranchConst.CITY)));
+        branch.setAddressStreet(contentValues.getAsString(CarConst.BranchConst.STREET));
+        branch.setAddressNumber(contentValues.getAsInteger(CarConst.BranchConst.NUMBER));
         branch.setParking_spacees(contentValues.getAsInteger(CarConst.BranchConst.PARKING));
         branch.setBranchNumber(contentValues.getAsInteger(CarConst.BranchConst.BRANCH_NAME));
 

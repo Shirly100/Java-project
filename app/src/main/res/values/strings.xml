@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Take&amp;Go</string>
+    <string name="AddClient">Add Client</string>
+    <string name="lastName">Add Client</string>
+    <string name="firstName">Add Client</string>
+    <string name="phoneNumber">Add Client</string>
+    <string name="ID">Add Client</string>
+    <string name="mail">Add Client</string>
+    <string name="cardNumber">Add Client</string>
+    <string name="add_client">Add Client</string>
 </resources>
