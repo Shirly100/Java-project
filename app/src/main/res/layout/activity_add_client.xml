@@ -9,50 +9,51 @@ tools:context="com.example.shirly.takego.controller.AddClientActivity">
 
 <EditText
     android:id="@+id/lastNameEditText"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:ems="10"
     android:hint="@string/lastName"
     android:inputType="text" />
 <EditText
     android:id="@+id/firstNameEditText"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:ems="10"
     android:hint="@string/firstName"
     android:inputType="text" />
 <EditText
     android:id="@+id/phoneNumberEditText"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:ems="10"
     android:hint="@string/phoneNumber"
     android:inputType="text" />
 <EditText
         android:id="@+id/IDEditText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/ID"
         android:inputType="text" />
  <EditText
         android:id="@+id/mailEditText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/mail"
         android:inputType="text" />
  <EditText
         android:id="@+id/cardNumberEditText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/cardNumber"
         android:inputType="text" />
 
-<Button
-    android:id="@+id/addClientButton"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/add_client" />
+ <Button
+     android:id="@+id/addClientButton1"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:text="@string/add_client"
+     android:textColor="@color/colorPrimary" />
 </LinearLayout>

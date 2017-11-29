@@ -9,7 +9,7 @@ import android.widget.Button;
 
 import com.example.shirly.takego.R;
 
-public class MainActivity extends Activity implements View.OnClickListener
+public class MainActivity extends Activity  implements View.OnClickListener
 {
 
     private Button addClientButton;
@@ -19,35 +19,38 @@ public class MainActivity extends Activity implements View.OnClickListener
     private Button showCarListButton;
     private Button showModelListButton;
     private Button showClientListButton;
-    private Button showOrderListButton;
 
 
 
-    private void findViews()
+
+   private void findViews()
     {
         addClientButton = (Button)findViewById( R.id.addClientButton );
         addCarModelButton = (Button)findViewById( R.id. addCarModelButton );
         addCarButton = (Button)findViewById( R.id.addCarButton );
-        showBranchesListButton = (Button)findViewById( R.id.showBranchesListButton );
-        showCarListButton = (Button)findViewById( R.id.showCarListButton );
-        showModelListButton = (Button)findViewById( R.id.showModelListButton );
-        showClientListButton = (Button)findViewById( R.id.showClientListButton);
-        showOrderListButton = (Button)findViewById( R.id.showOrderListButton );
-        addClientButton.setOnClickListener( this );
-        addCarModelButton.setOnClickListener( this );
-        addCarButton.setOnClickListener( this );
-        showBranchesListButton.setOnClickListener( this );
-        showCarListButton.setOnClickListener( this );
-        showModelListButton.setOnClickListener( this );
-        showClientListButton.setOnClickListener( this );
-        showOrderListButton.setOnClickListener( this );
+       // showBranchesListButton = (Button)findViewById( R.id.showBranchesListButton );
+       // showCarListButton = (Button)findViewById( R.id.showCarListButton );
+       // showModelListButton = (Button)findViewById( R.id.showModelListButton );
+       // showClientListButton = (Button)findViewById( R.id.showClientListButton);
+
+        //addClientButton.setOnClickListener(MainActivity.this );
+        //addCarModelButton.setOnClickListener( this );
+        //addCarButton.setOnClickListener( this );
+        //showBranchesListButton.setOnClickListener( this );
+        //showCarListButton.setOnClickListener( this );
+        //showModelListButton.setOnClickListener( this );
+        //showClientListButton.setOnClickListener( this );
+
 
     }
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        findViews();
 
     }
 
@@ -56,12 +59,13 @@ public class MainActivity extends Activity implements View.OnClickListener
     public void onClick(View v) {
         if ( v == addClientButton ) {
             addClient();// Handle clicks for addStudentButton
-            } /*else if ( v == addCarModelButton ) {
+            }
+            else if ( v == addCarModelButton ) {
             addCarrModel();// Handle clicks for addLecturerButton
             }
               else if ( v == addCarButton  ) {
                 addCar();// Handle clicks for addCourseButton
-            } else if ( v == showBranchesListButton ) {
+            } /*else if ( v == showBranchesListButton ) {
             showBranchesList();// Handle clicks for addStudentCourseButton
             } else if ( v == showCarListButton ) {
             showCarList();// Handle clicks for showStudentListButton
@@ -76,23 +80,23 @@ public class MainActivity extends Activity implements View.OnClickListener
         }*/
          }
 
-
     private  void  addClient()
     {
-        Intent intent=new Intent(this,AddClientActivity.class);
+        Intent intent=new Intent(MainActivity.this,AddClientActivity.class);
         startActivity(intent);
     }
 
-   /* private  void  addCar()
+    private  void  addCar()
     {
         Intent intent=new Intent(this,AddCarActivity.class);
         startActivity(intent);
     }
+
     private  void  addCarrModel()
     {
         Intent intent=new Intent(this,AddCarModelActivity.class);
         startActivity(intent);
-    }
+    }/*
     private  void  showBranchesList()
     {
         Intent intent=new Intent(this,showBranchesListActivity.class);

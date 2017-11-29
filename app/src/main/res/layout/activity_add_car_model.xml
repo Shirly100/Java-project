@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:stretchColumns="1">
+
+            <EditText
+                android:id="@+id/modelCodeEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/modelCode"
+                android:inputType="text" />
+            <EditText
+                android:id="@+id/companyEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/company"
+                android:inputType="text" />
+            <EditText
+                android:id="@+id/modelNameEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/modelName"
+                android:inputType="text" />
+            <EditText
+                android:id="@+id/EngineCapacityEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/capacity"
+                android:inputType="text" />
+            <EditText
+                android:id="@+id/gearEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/gear"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/SeatingCapacityEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/seats"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/DoorsNumberEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/doors"/>
+            <EditText
+                android:id="@+id/emptyMassEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/mass"
+                android:inputType="text" />
+            <EditText
+                android:id="@+id/fuelEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/fuel"
+                android:inputType="text" />
+            <EditText
+                android:id="@+id/engine_typeEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/engine"
+                android:inputType="text" />
+            <EditText
+                android:id="@+id/turboEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/turbo"
+                android:inputType="text" />
+            <EditText
+                android:id="@+id/Lighted_makeup_mirrorEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/mirrors"
+                android:inputType="text" />
+            <EditText
+                android:id="@+id/Digital_radioEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/radio"
+                android:inputType="text" />
+            <EditText
+                android:id="@+id/PanoramaEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/panorama"
+                android:inputType="text" />
+            <EditText
+                android:id="@+id/Driver_airbagEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/airbags"
+                android:inputType="text" />
+            <EditText
+                android:id="@+id/Emergency_brake_assistEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/emergency"
+                android:inputType="text" />
+            <EditText
+                android:id="@+id/Total_max_powerEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/power"
+                android:inputType="text" />
+
+
+            <Button
+                android:id="@+id/addCarModelButton1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_car_model" />
+
+
+        </TableLayout>
+    </ScrollView>
+
+
+

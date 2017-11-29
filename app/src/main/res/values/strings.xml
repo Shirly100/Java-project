@@ -8,6 +8,29 @@
     <string name="mail">Mail</string>
     <string name="cardNumber">Card Number</string>
     <string name="add_client">Add Client</string>
+    <string name="branchNumber">Branch Number</string>
+    <string name="modelType">Model </string>
+    <string name="mileage">Mileage </string>
+    <string name="carNumber">Car Number </string>
+    <string name="add_car">Add Car</string>
+    <string name="modelCode">Model Code</string>
+    <string name="company">Company</string>
+    <string name="modelName">Model Name</string>
+    <string name="capacity">Engine Capacity</string>
+    <string name="gear">Gear</string>
+    <string name="seats">Seating Capacity</string>
+    <string name="doors">Doors Number</string>
+    <string name="mass">Empty Mass</string>
+    <string name="fuel">Fuel</string>
+    <string name="engine">Engine</string>
+    <string name="turbo">Turbo</string>
+    <string name="mirrors">Lighted MakeUp Mirrors</string>
+    <string name="radio">Digital Radio</string>
+    <string name="panorama">Panorama</string>
+    <string name="airbags">Driver Airbags</string>
+    <string name="emergency">Emergancy Brake</string>
+    <string name="power">Total Max power</string>
+    <string name="add_car_model">Add Car Model</string>
 
 
 </resources>

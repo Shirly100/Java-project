@@ -22,13 +22,14 @@ private EditText phoneNumberEditText;
 private EditText IDEditText;
 private EditText mailEditText;
 private EditText cardNumberEditText;
-private Button addClientButton;
+private Button addClientButton1;
 
 
     @Override
     public void onClick(View v) {
-        if ( v == addClientButton )
-        {              addClient();
+        if ( v == addClientButton1 )
+        {
+            addClient();
         }
     }
 
@@ -51,9 +52,16 @@ private Button addClientButton;
             contentValues.put(CarConst.ClientConst.MAIL, this. mailEditText.getText().toString());
             contentValues.put(CarConst.ClientConst.CARD_NUMBER, this.cardNumberEditText.getText().toString());
 
-            factory_dal.get_dal().addClient(contentValues);       }
+            factory_dal.get_dal().addClient(contentValues);
+            }
         catch (Exception e) {}
         }
+
+
+
+
+
+
 
     private void findViews() {
         lastNameEditText = (EditText)findViewById( R.id.lastNameEditText );
@@ -62,8 +70,8 @@ private Button addClientButton;
         IDEditText = (EditText)findViewById( R.id.IDEditText);
         mailEditText = (EditText)findViewById( R.id.mailEditText);
         cardNumberEditText= (EditText)findViewById( R.id.cardNumberEditText);
-        addClientButton = (Button)findViewById( R.id.addClientButton );
-        addClientButton.setOnClickListener( this );     }
+        addClientButton1 = (Button)findViewById( R.id.addClientButton1 );
+        addClientButton1.setOnClickListener( this );     }
 
 
 
