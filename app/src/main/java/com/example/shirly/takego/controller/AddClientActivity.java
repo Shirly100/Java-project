@@ -2,7 +2,7 @@ package com.example.shirly.takego.controller;
 
 import android.app.Activity;
 import android.content.ContentValues;
-import android.os.AsyncTask;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +13,9 @@ import android.widget.Toast;
 import com.example.shirly.takego.R;
 import com.example.shirly.takego.model.backend.CarConst;
 import com.example.shirly.takego.model.backend.factory_dal;
+import com.example.shirly.takego.model.entities.Client;
+
+import static com.example.shirly.takego.model.backend.CarConst.ContentValuesToClient;
 
 public class AddClientActivity extends Activity implements View.OnClickListener{
 
@@ -52,7 +55,32 @@ private Button addClientButton1;
             contentValues.put(CarConst.ClientConst.MAIL, this. mailEditText.getText().toString());
             contentValues.put(CarConst.ClientConst.CARD_NUMBER, this.cardNumberEditText.getText().toString());
 
-            factory_dal.get_dal().addClient(contentValues);
+               // Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
+
+               // _loginButton.setEnabled(true);
+            int flag=0;
+
+                if(factory_dal.get_dal().isExistClient(contentValues))
+                {
+                    Toast.makeText(getBaseContext(), "Client Already Exist", Toast.LENGTH_LONG).show();
+                    lastNameEditText.setText("");
+                    firstNameEditText.setText("");
+                    phoneNumberEditText.setText("");
+                    IDEditText.setText("");
+                    mailEditText.setText("");
+                   cardNumberEditText.setText("");
+
+                    flag=1;
+
+                }
+
+            if(flag==0)
+            {
+                factory_dal.get_dal().addClient(contentValues);
+                Intent intent=new Intent(this,MenuActivity.class);
+                startActivity(intent);
+            }
+
             }
         catch (Exception e) {}
         }

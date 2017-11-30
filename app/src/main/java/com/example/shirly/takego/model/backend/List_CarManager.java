@@ -77,12 +77,11 @@ public class List_CarManager implements ICarManager
     public boolean isExistClient(ContentValues client)
     {
         Client item = ContentValuesToClient(client);
-        int index=clients.indexOf(item);
-        if (index==-1)
-        {
-            return false;
+        for (int i = 0; i < factory_dal.get_dal().getClients().size(); i++) {
+            if (factory_dal.get_dal().getClients().get(i).getID() == item.getID())
+                return true;
         }
-        return true;
+        return false;
     }
     @Override
     public String addCarModel(ContentValues model)throws  Exception

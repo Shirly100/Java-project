@@ -13,33 +13,38 @@ tools:context="com.example.shirly.takego.controller.AddCarActivity">
     android:layout_height="wrap_content"
     android:ems="10"
     android:hint="@string/branchNumber"
-    android:inputType="text" />
+    android:inputType="text"
+    android:textSize='20sp'/>
 <EditText
     android:id="@+id/modelTypeEditText"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:ems="10"
     android:hint="@string/modelType"
-    android:inputType="text" />
+    android:inputType="text"
+    android:textSize='20sp'/>
 <EditText
     android:id="@+id/mileageEditText"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:ems="10"
     android:hint="@string/mileage"
-    android:inputType="text" />
+    android:inputType="text"
+    android:textSize='20sp'/>
 <EditText
     android:id="@+id/carNumberEditText"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:ems="10"
     android:hint="@string/carNumber"
-    android:inputType="text" />
+    android:inputType="text"
+    android:textSize='20sp'/>
 
 
 <Button
     android:id="@+id/addCarButton1"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="@string/add_car" />
+    android:text="@string/add_car"
+    android:textSize='20sp'/>
 </LinearLayout>

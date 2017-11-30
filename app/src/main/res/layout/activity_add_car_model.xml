@@ -17,35 +17,40 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/modelCode"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textSize='20sp'/>
             <EditText
                 android:id="@+id/companyEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/company"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textSize='20sp'/>
             <EditText
                 android:id="@+id/modelNameEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/modelName"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textSize='20sp'/>
             <EditText
                 android:id="@+id/EngineCapacityEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/capacity"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textSize='20sp'/>
             <EditText
                 android:id="@+id/gearEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/gear"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textSize='20sp'/>
 
             <EditText
                 android:id="@+id/SeatingCapacityEditText"
@@ -53,91 +58,104 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/seats"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textSize='20sp'/>
 
             <EditText
                 android:id="@+id/DoorsNumberEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="@string/doors"/>
+                android:hint="@string/doors"
+                android:textSize='20sp'/>
             <EditText
                 android:id="@+id/emptyMassEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/mass"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textSize='20sp'/>
             <EditText
                 android:id="@+id/fuelEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/fuel"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textSize='20sp'/>
             <EditText
                 android:id="@+id/engine_typeEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/engine"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textSize='20sp'/>
             <EditText
                 android:id="@+id/turboEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/turbo"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textSize='20sp'/>
             <EditText
                 android:id="@+id/Lighted_makeup_mirrorEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/mirrors"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textSize='20sp'/>
             <EditText
                 android:id="@+id/Digital_radioEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/radio"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textSize='20sp'/>
             <EditText
                 android:id="@+id/PanoramaEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/panorama"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textSize='20sp'/>
             <EditText
                 android:id="@+id/Driver_airbagEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/airbags"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textSize='20sp'/>
             <EditText
                 android:id="@+id/Emergency_brake_assistEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/emergency"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textSize='20sp'/>
             <EditText
                 android:id="@+id/Total_max_powerEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/power"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textSize='20sp'/>
 
 
             <Button
                 android:id="@+id/addCarModelButton1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/add_car_model" />
+                android:text="@string/add_car_model"
+                android:textSize='20sp'/>
 
 
         </TableLayout>
