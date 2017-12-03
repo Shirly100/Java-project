@@ -36,6 +36,9 @@
     <string name="street">Street</string>
     <string name="number">Number</string>
     <string name="add_branch">Add Branch</string>
+    <string name="SELECT_GEAR">Select Gear</string>
+
+
 
 
 </resources>

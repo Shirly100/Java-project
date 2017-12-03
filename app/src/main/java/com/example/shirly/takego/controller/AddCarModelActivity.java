@@ -5,14 +5,21 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.shirly.takego.R;
 import com.example.shirly.takego.model.backend.CarConst;
 import com.example.shirly.takego.model.backend.factory_dal;
 import com.example.shirly.takego.model.entities.CarModel;
 import com.example.shirly.takego.model.entities.Enums;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class AddCarModelActivity extends Activity implements View.OnClickListener {
 
@@ -27,7 +34,7 @@ public class AddCarModelActivity extends Activity implements View.OnClickListene
     private EditText companyEditText;
     private EditText modelNameEditText;
     private EditText EngineCapacityEditText;
-    private EditText gearEditText;
+    //private EditText gearEditText;
     private EditText SeatingCapacityEditText;
     private EditText DoorsNumberEditText;
     private EditText emptyMassEditText;
@@ -41,11 +48,16 @@ public class AddCarModelActivity extends Activity implements View.OnClickListene
     private EditText Emergency_brake_assistEditText;
     private EditText Total_max_powerEditText;
     private Button addCarModelButton1;
+    private Spinner spinner1;
+
 
     @Override
     public void onClick(View v) {
         if (v == addCarModelButton1) {
             addCarModel();
+            //addItemsOnSpinner1();
+
+
         }
     }
 
@@ -57,7 +69,7 @@ public class AddCarModelActivity extends Activity implements View.OnClickListene
             contentValues.put(CarConst.CarModelConst.COMPANY, this.companyEditText.getText().toString());
             contentValues.put(CarConst.CarModelConst.MODEL_NAME, this.modelNameEditText.getText().toString());
             contentValues.put(CarConst.CarModelConst.ENGINE_CAPACITY, this.EngineCapacityEditText.getText().toString());
-            contentValues.put(CarConst.CarModelConst.GEAR, this.gearEditText.getText().toString());
+            contentValues.put(CarConst.CarModelConst.GEAR, this.spinner1.getSelectedItem().toString());
             int capacity = Integer.valueOf(this.SeatingCapacityEditText.getText().toString());
             contentValues.put(CarConst.CarModelConst.SEATING_CAPICITY, capacity);
             int doors = Integer.valueOf(this.DoorsNumberEditText.getText().toString());
@@ -89,7 +101,21 @@ public class AddCarModelActivity extends Activity implements View.OnClickListene
         companyEditText = (EditText)findViewById( R.id. companyEditText );
         modelNameEditText = (EditText)findViewById( R.id.modelNameEditText );
         EngineCapacityEditText = (EditText)findViewById( R.id.EngineCapacityEditText);
-        gearEditText = (EditText)findViewById( R.id.gearEditText);
+        //gearEditText = (EditText)findViewById( R.id.gearEditText);
+        spinner1 = (Spinner) findViewById(R.id.spinner1);
+        spinner1.setAdapter(new ArrayAdapter<Enums.Gear>(this, android.R.layout.simple_list_item_1, Enums.Gear.values()));
+        spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getBaseContext(),parent.getItemIdAtPosition(position)+" selected",Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+
+            }
+        });
         SeatingCapacityEditText = (EditText)findViewById( R.id.SeatingCapacityEditText);
         DoorsNumberEditText= (EditText)findViewById( R.id.DoorsNumberEditText);
         emptyMassEditText = (EditText)findViewById( R.id. emptyMassEditText);
@@ -107,6 +133,10 @@ public class AddCarModelActivity extends Activity implements View.OnClickListene
 
         addCarModelButton1 = (Button)findViewById(R.id.addCarModelButton1 );
         addCarModelButton1.setOnClickListener( this );     }
+
+
+
+
 
 
 

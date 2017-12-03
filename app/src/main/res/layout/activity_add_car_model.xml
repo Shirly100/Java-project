@@ -43,14 +43,30 @@
                 android:hint="@string/capacity"
                 android:inputType="text"
                 android:textSize='20sp'/>
-            <EditText
-                android:id="@+id/gearEditText"
+
+            <TextView
+                android:text="@string/SELECT_GEAR"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/gear"
-                android:inputType="text"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/gear"
                 android:textSize='20sp'/>
+
+            <Spinner
+                android:id="@+id/spinner1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@+id/gear"/>
+
+            <!--<EditText
+                 android:id="@+id/gearEditText"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:ems="10"
+                 android:hint="@string/gear"
+                 android:inputType="text"
+                 android:textSize='20sp'/>-->
 
             <EditText
                 android:id="@+id/SeatingCapacityEditText"
