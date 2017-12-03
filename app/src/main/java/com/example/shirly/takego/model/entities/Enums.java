@@ -8,4 +8,5 @@ public class Enums
 {
     public enum Gear {  AUTOMATIC, MANUAL};
     public enum Order {OPEN,CLOSE};
+    public enum  Answer{YES,NO};
 }

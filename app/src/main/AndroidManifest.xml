@@ -27,7 +27,12 @@
             android:label="Add Car Model" />
         <activity android:name=".controller.showClientListActivity" />
         <activity android:name=".controller.MenuActivity" />
-        <activity android:name=".controller.SignupActivity"></activity>
+        <activity android:name=".controller.LoginActivity" />
+        <activity android:name=".controller.RegisterActivity" />
+        <activity android:name=".controller.AddBranchActivity" />
+        <activity android:name=".controller.showBranchListActivity" />
+        <activity android:name=".controller.showCarsListActivity" />
+        <activity android:name=".controller.showModelsListActivity" />
     </application>
 
 </manifest>

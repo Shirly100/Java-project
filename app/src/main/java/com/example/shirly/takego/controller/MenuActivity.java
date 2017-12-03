@@ -29,18 +29,18 @@ public class MenuActivity extends Activity  implements View.OnClickListener
         addCarModelButton = (Button)findViewById( R.id. addCarModelButton );
         addCarButton = (Button)findViewById( R.id.addCarButton );
         addBranchButton = (Button)findViewById( R.id.addBranchButton );
-       // showBranchesListButton = (Button)findViewById( R.id.showBranchesListButton );
-       // showCarListButton = (Button)findViewById( R.id.showCarListButton );
-       // showModelListButton = (Button)findViewById( R.id.showModelListButton );
+       showBranchesListButton = (Button)findViewById( R.id.showBranchesListButton );
+        showCarListButton = (Button)findViewById( R.id.showCarListButton );
+       showModelListButton = (Button)findViewById( R.id.showModelListButton );
        showClientListButton = (Button)findViewById( R.id.showClientListButton);
 
         addClientButton.setOnClickListener(MenuActivity.this );
         addCarModelButton.setOnClickListener( this );
         addCarButton.setOnClickListener( this );
         addBranchButton.setOnClickListener( this );
-        //showBranchesListButton.setOnClickListener( this );
-        //showCarListButton.setOnClickListener( this );
-        //showModelListButton.setOnClickListener( this );
+        showBranchesListButton.setOnClickListener( this );
+        showCarListButton.setOnClickListener( this );
+        showModelListButton.setOnClickListener( this );
         showClientListButton.setOnClickListener( this );
 
 
@@ -67,21 +67,26 @@ public class MenuActivity extends Activity  implements View.OnClickListener
             }
               else if ( v == addCarButton  ) {
                 addCar();// Handle clicks for addCourseButton
-            } /*else if ( v == showBranchesListButton ) {
+            }
+            else if ( v == addBranchButton  ) {
+                addBranch();// Handle clicks for addCourseButton
+        } else if ( v == showBranchesListButton ) {
             showBranchesList();// Handle clicks for addStudentCourseButton
             } else if ( v == showCarListButton ) {
             showCarList();// Handle clicks for showStudentListButton
             } else if ( v == showModelListButton ) {
             showModelList();// Handle clicks for showCourseListButton
-            }*/
+            }
         else if ( v == showClientListButton ) {
             showClientList();// Handle clicks for showCourseListButton
         }
-       /* else if ( v == showOrderListButton ) {
-            showOrderLis();// Handle clicks for showCourseListButton
-        }*/
-         }
 
+         }
+    private  void  addBranch()
+    {
+        Intent intent=new Intent(MenuActivity.this,AddBranchActivity.class);
+        startActivity(intent);
+    }
     private  void  addClient()
     {
         Intent intent=new Intent(MenuActivity.this,AddClientActivity.class);
@@ -98,32 +103,28 @@ public class MenuActivity extends Activity  implements View.OnClickListener
     {
         Intent intent=new Intent(this,AddCarModelActivity.class);
         startActivity(intent);
-    }/*
+    }
     private  void  showBranchesList()
     {
-        Intent intent=new Intent(this,showBranchesListActivity.class);
+        Intent intent=new Intent(this,showBranchListActivity.class);
         startActivity(intent);
     }
     private  void  showCarList()
     {
-        Intent intent=new Intent(this,showCarListActivity.class);
+        Intent intent=new Intent(this,showCarsListActivity.class);
         startActivity(intent);
-    }*/
+    }
     private  void  showClientList()
     {
         Intent intent=new Intent(this, showClientListActivity.class);
         startActivity(intent);
     }
-    /*private  void  showModelList()
+    private  void  showModelList()
     {
-        Intent intent=new Intent(this, showModelListActivity.class);
+        Intent intent=new Intent(this, showModelsListActivity.class);
         startActivity(intent);
     }
-    private  void   showOrderLis()
-    {
-        Intent intent=new Intent(this, showModelListActivity.class);
-        startActivity(intent);
-    }*/
+
 
 }
 

@@ -127,4 +127,19 @@ public class List_CarManager implements ICarManager
 
     }
 
+
+    @Override
+    public int addBranch(ContentValues branch) throws Exception
+    {
+        Branch item = ContentValuesToBranch(branch);
+        int index=branches.indexOf(item);
+        if (index!= -1)
+        {
+            throw new Exception("this branch already exist.");
+        }
+        branches.add(item);
+        return item.getBranchNumber();
+
+    }
+
 }

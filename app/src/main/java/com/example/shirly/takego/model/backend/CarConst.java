@@ -81,9 +81,9 @@ public class CarConst
     public static ContentValues BranchToContentValues(Branch branch) {
 
         ContentValues contentValues = new ContentValues();
-        contentValues.put(BranchConst.CITY, branch.getAddress().getCity());
-        contentValues.put(BranchConst.STREET,branch.getAddress().getStreet());
-        contentValues.put(BranchConst.NUMBER, branch.getAddress().getNumber());
+        contentValues.put(BranchConst.CITY, branch.getCity());
+        contentValues.put(BranchConst.STREET,branch.getStreet());
+        contentValues.put(BranchConst.NUMBER, branch.getNumber());
         contentValues.put(BranchConst.PARKING, branch.getParking_spacees());
         contentValues.put(BranchConst.BRANCH_NAME, branch.getBranchNumber());
 
@@ -116,12 +116,12 @@ public class CarConst
         contentValues.put(CarModelConst.EMPTY_MASS, model.getEmptyMass());
         contentValues.put(CarModelConst.FUEL, model.getFuel());
         contentValues.put(CarModelConst.ENGINE_TYPE, model.getEngine_type());
-        contentValues.put(CarModelConst.TURBO, model.getTurbo());
-        contentValues.put(CarModelConst.LIGHTED_MAKEUP_MIRROR, model.getLighted_makeup_mirror());
-        contentValues.put(CarModelConst.DIGITAL_RADIO, model.getDigital_radio());
-        contentValues.put(CarModelConst.PANORAMA, model.getPanorama());
-        contentValues.put(CarModelConst.DRIVER_AIRBAG, model.getDriver_airbag());
-        contentValues.put(CarModelConst.EMERGENCY_BRAKE_ASSIST, model.getEmergency_brake_assist());
+        contentValues.put(CarModelConst.TURBO, String.valueOf(model.getTurbo()));
+        contentValues.put(CarModelConst.LIGHTED_MAKEUP_MIRROR, String.valueOf(model.getLighted_makeup_mirror()));
+        contentValues.put(CarModelConst.DIGITAL_RADIO, String.valueOf(model.getDigital_radio()));
+        contentValues.put(CarModelConst.PANORAMA, String.valueOf(model.getPanorama()));
+        contentValues.put(CarModelConst.DRIVER_AIRBAG, String.valueOf(model.getDriver_airbag()));
+        contentValues.put(CarModelConst.EMERGENCY_BRAKE_ASSIST, String.valueOf(model.getEmergency_brake_assist()));
         contentValues.put(CarModelConst.TOTAL_MAX_POWER, model.getTotal_max_power());
 
         return contentValues;
@@ -168,9 +168,9 @@ public class CarConst
     public static Branch ContentValuesToBranch(ContentValues contentValues) {
 
         Branch branch = new Branch();
-        branch.setAddressCity((contentValues.getAsString(CarConst.BranchConst.CITY)));
-        branch.setAddressStreet(contentValues.getAsString(CarConst.BranchConst.STREET));
-        branch.setAddressNumber(contentValues.getAsInteger(CarConst.BranchConst.NUMBER));
+        branch.setCity((contentValues.getAsString(CarConst.BranchConst.CITY)));
+        branch.setStreet(contentValues.getAsString(CarConst.BranchConst.STREET));
+        branch.setNumber(contentValues.getAsInteger(CarConst.BranchConst.NUMBER));
         branch.setParking_spacees(contentValues.getAsInteger(CarConst.BranchConst.PARKING));
         branch.setBranchNumber(contentValues.getAsInteger(CarConst.BranchConst.BRANCH_NAME));
 
@@ -203,12 +203,12 @@ public class CarConst
         model.setEmptyMass(contentValues.getAsString(CarConst.CarModelConst.EMPTY_MASS));
         model.setFuel(contentValues.getAsString(CarConst.CarModelConst.FUEL));
         model.setEngine_type(contentValues.getAsString(CarConst.CarModelConst.ENGINE_TYPE));
-        model.setTurbo(contentValues.getAsBoolean(CarConst.CarModelConst.TURBO));
-        model.setLighted_makeup_mirror(contentValues.getAsBoolean(CarConst.CarModelConst.LIGHTED_MAKEUP_MIRROR));
-        model.setDigital_radio(contentValues.getAsBoolean(CarConst.CarModelConst.DIGITAL_RADIO));
-        model.setPanorama(contentValues.getAsBoolean(CarConst.CarModelConst.PANORAMA));
-        model.setDriver_airbag(contentValues.getAsBoolean(CarConst.CarModelConst.DRIVER_AIRBAG));
-        model.setEmergency_brake_assist(contentValues.getAsBoolean(CarConst.CarModelConst.EMERGENCY_BRAKE_ASSIST));
+        model.setTurbo(Enums.Answer.valueOf(contentValues.getAsString(CarModelConst.TURBO)));
+        model.setLighted_makeup_mirror(Enums.Answer.valueOf(contentValues.getAsString(CarModelConst.LIGHTED_MAKEUP_MIRROR)));
+        model.setDigital_radio(Enums.Answer.valueOf(contentValues.getAsString(CarModelConst.DIGITAL_RADIO)));
+        model.setPanorama(Enums.Answer.valueOf(contentValues.getAsString(CarModelConst.PANORAMA)));
+        model.setDriver_airbag(Enums.Answer.valueOf(contentValues.getAsString(CarModelConst.DRIVER_AIRBAG)));
+        model.setEmergency_brake_assist(Enums.Answer.valueOf(contentValues.getAsString(CarModelConst.EMERGENCY_BRAKE_ASSIST)));
         model.setTotal_max_power(contentValues.getAsString(CarConst.CarModelConst.TOTAL_MAX_POWER));
 
 

@@ -2,6 +2,7 @@ package com.example.shirly.takego.controller;
 
 import android.app.Activity;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -64,23 +65,18 @@ public class AddCarModelActivity extends Activity implements View.OnClickListene
             contentValues.put(CarConst.CarModelConst.EMPTY_MASS, this.emptyMassEditText.getText().toString());
             contentValues.put(CarConst.CarModelConst.FUEL, this.fuelEditText.getText().toString());
             contentValues.put(CarConst.CarModelConst.ENGINE_TYPE, this.engine_typeEditText.getText().toString());
-            boolean turbo = Boolean.valueOf(this.turboEditText.getText().toString());
-            contentValues.put(CarConst.CarModelConst.TURBO, turbo);
-            boolean mirror = Boolean.valueOf(this.Lighted_makeup_mirrorEditText.getText().toString());
-            contentValues.put(CarConst.CarModelConst.LIGHTED_MAKEUP_MIRROR, mirror);
-            boolean radio = Boolean.valueOf(this.Digital_radioEditText.getText().toString());
-            contentValues.put(CarConst.CarModelConst.DIGITAL_RADIO, radio);
-            boolean panorama = Boolean.valueOf(this.PanoramaEditText.getText().toString());
-            contentValues.put(CarConst.CarModelConst.PANORAMA, panorama);
-            boolean airbag = Boolean.valueOf(this.Driver_airbagEditText.getText().toString());
-            contentValues.put(CarConst.CarModelConst.DRIVER_AIRBAG, airbag);
-            boolean brake = Boolean.valueOf(this.Emergency_brake_assistEditText.getText().toString());
-            contentValues.put(CarConst.CarModelConst.EMERGENCY_BRAKE_ASSIST, brake);
-            boolean power = Boolean.valueOf(this.Total_max_powerEditText.getText().toString());
-            contentValues.put(CarConst.CarModelConst.TOTAL_MAX_POWER, power);
+            contentValues.put(CarConst.CarModelConst.TURBO,this.turboEditText.getText().toString() );
+            contentValues.put(CarConst.CarModelConst.LIGHTED_MAKEUP_MIRROR, this.Lighted_makeup_mirrorEditText.getText().toString());
+            contentValues.put(CarConst.CarModelConst.DIGITAL_RADIO, this.Digital_radioEditText.getText().toString());
+            contentValues.put(CarConst.CarModelConst.PANORAMA, this.PanoramaEditText.getText().toString());
+            contentValues.put(CarConst.CarModelConst.DRIVER_AIRBAG, this.Driver_airbagEditText.getText().toString());
+            contentValues.put(CarConst.CarModelConst.EMERGENCY_BRAKE_ASSIST, this.Emergency_brake_assistEditText.getText().toString());
+            contentValues.put(CarConst.CarModelConst.TOTAL_MAX_POWER,this.Total_max_powerEditText.getText().toString());
             contentValues.put(CarConst.CarModelConst.EMPTY_MASS, this.Total_max_powerEditText.getText().toString());
 
-            factory_dal.get_dal().addCar(contentValues);
+            factory_dal.get_dal().addCarModel(contentValues);
+            Intent intent=new Intent(this,MenuActivity.class);
+            startActivity(intent);
         } catch (Exception e) {
         }
     }

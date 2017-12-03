@@ -2,6 +2,7 @@ package com.example.shirly.takego.controller;
 
 import android.app.Activity;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -53,7 +54,9 @@ public class AddCarActivity extends Activity implements View.OnClickListener{
             long car_number = Integer.valueOf(this.carNumberEditText.getText().toString());
             contentValues.put(CarConst.CarsConst.CAR_NUMBER,car_number);
 
-            factory_dal.get_dal().addCar(contentValues);       }
+            factory_dal.get_dal().addCar(contentValues);
+            Intent intent=new Intent(this,MenuActivity.class);
+            startActivity(intent);}
         catch (Exception e) {}
     }
 

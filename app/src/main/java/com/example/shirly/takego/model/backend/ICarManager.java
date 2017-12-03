@@ -21,6 +21,7 @@ public interface ICarManager
     List<CarModel> getModels();
    long addCar(ContentValues car)throws Exception;
 
+    int addBranch(ContentValues branch) throws Exception;
     List<Branch> getBranches();
     List<Car> getCars();
 

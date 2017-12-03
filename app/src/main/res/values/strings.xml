@@ -31,6 +31,11 @@
     <string name="emergency">Emergancy Brake</string>
     <string name="power">Total Max power</string>
     <string name="add_car_model">Add Car Model</string>
+    <string name="parking">Parking Spaces</string>
+    <string name="city">City</string>
+    <string name="street">Street</string>
+    <string name="number">Number</string>
+    <string name="add_branch">Add Branch</string>
 
 
 </resources>

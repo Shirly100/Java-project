@@ -51,6 +51,7 @@ tools:context="com.example.shirly.takego.controller.MenuActivity">
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
+            android:onClick="onClick"
             android:text="Show branches List"
             android:textSize='20sp'/>
 
@@ -58,7 +59,8 @@ tools:context="com.example.shirly.takego.controller.MenuActivity">
             android:id="@+id/showCarListButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Show cars "
+            android:text="Show cars List"
+            android:onClick="onClick"
             android:textSize='20sp'/>
 
 

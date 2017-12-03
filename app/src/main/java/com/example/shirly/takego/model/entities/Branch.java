@@ -9,20 +9,33 @@ public class Branch
 
     private  int parking_spacees;
     private  int branchNumber;
-    private Address address;
+    private String city;
+    private String street;
+    private int number;
 
-    public Address getAddress() {
-        return address;
+
+    public String getCity() {
+        return city;
     }
 
-    public void setAddressNumber(int number) {
-        this.address.setNumber( number);
+    public void setCity(String city) {
+        this.city = city;
     }
-    public void setAddressCity(String city) {
-        this.address.setCity(city);
+
+    public String getStreet() {
+        return street;
     }
-    public void setAddressStreet(String street) {
-        this.address.setStreet(street);
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
     }
 
     public int getParking_spacees() {

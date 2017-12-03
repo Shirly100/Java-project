@@ -46,5 +46,6 @@ tools:context="com.example.shirly.takego.controller.AddCarActivity">
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="@string/add_car"
-    android:textSize='20sp'/>
+    android:textSize='20sp'
+    android:onClick="AddCar"/>
 </LinearLayout>
