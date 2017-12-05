@@ -53,20 +53,13 @@
                 android:textSize='20sp'/>
 
             <Spinner
-                android:id="@+id/spinner1"
+                android:id="@+id/spinnerGear"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_toRightOf="@+id/gear"/>
 
-            <!--<EditText
-                 android:id="@+id/gearEditText"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:ems="10"
-                 android:hint="@string/gear"
-                 android:inputType="text"
-                 android:textSize='20sp'/>-->
+
 
             <EditText
                 android:id="@+id/SeatingCapacityEditText"
@@ -108,54 +101,95 @@
                 android:hint="@string/engine"
                 android:inputType="text"
                 android:textSize='20sp'/>
-            <EditText
-                android:id="@+id/turboEditText"
+            <TextView
+                android:text="@string/Turbo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/turbo"
-                android:inputType="text"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/turbo"
                 android:textSize='20sp'/>
-            <EditText
-                android:id="@+id/Lighted_makeup_mirrorEditText"
+
+            <Spinner
+                android:id="@+id/spinnerTurbo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@+id/turbo"/>
+
+            <TextView
+                android:text="@string/Lighted_Makeup_mirror"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/mirrors"
-                android:inputType="text"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/Lighted_makeup_mirror"
                 android:textSize='20sp'/>
-            <EditText
-                android:id="@+id/Digital_radioEditText"
+
+            <Spinner
+                android:id="@+id/spinnerMirror"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@+id/Lighted_makeup_mirror"/>
+
+            <TextView
+                android:text="@string/Radio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/radio"
-                android:inputType="text"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/Digital_Radio"
                 android:textSize='20sp'/>
-            <EditText
-                android:id="@+id/PanoramaEditText"
+
+            <Spinner
+                android:id="@+id/spinnerRadio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@+id/Digital_Radio"/>
+            <TextView
+                android:text="@string/Panorama"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/panorama"
-                android:inputType="text"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/Panorama"
                 android:textSize='20sp'/>
-            <EditText
-                android:id="@+id/Driver_airbagEditText"
+
+            <Spinner
+                android:id="@+id/spinnerPanorama"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@+id/Panorama"/>
+
+            <TextView
+                android:text="@string/Air_Bags"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/airbags"
-                android:inputType="text"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/Driver_airbag"
                 android:textSize='20sp'/>
-            <EditText
-                android:id="@+id/Emergency_brake_assistEditText"
+
+            <Spinner
+                android:id="@+id/spinnerAirBags"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@+id/Driver_airbag"/>
+            <TextView
+                android:text="@string/Emergency_brake"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/emergency"
-                android:inputType="text"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/Emergency_brake_assist"
                 android:textSize='20sp'/>
+
+            <Spinner
+                android:id="@+id/spinnerBrake"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@+id/Emergency_brake_assist"/>
+
+
             <EditText
                 android:id="@+id/Total_max_powerEditText"
                 android:layout_width="wrap_content"

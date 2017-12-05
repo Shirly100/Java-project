@@ -29,7 +29,7 @@ public class showModelsListActivity extends Activity {
 
 
         for (int i = 0; i < factory_dal.get_dal().getModels().size(); i++) {
-            list.add((factory_dal.get_dal().getModels().get(i).getModelName()+" "+factory_dal.get_dal().getModels().get(i).getModelCode()+" "+factory_dal.get_dal().getModels().get(i).getGear()));
+            list.add((factory_dal.get_dal().getModels().get(i).getModelName()+" "+factory_dal.get_dal().getModels().get(i).getModelCode()));
         }
 
         ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,list)

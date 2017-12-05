@@ -37,6 +37,13 @@
     <string name="number">Number</string>
     <string name="add_branch">Add Branch</string>
     <string name="SELECT_GEAR">Select Gear</string>
+    <string name="Turbo">Turbo</string>
+    <string name="Lighted_Makeup_mirror">Lighted Makeup Mirror</string>
+    <string name="Radio">Digital Radio</string>
+    <string name="Panorama">Panorama</string>
+    <string name="Air_Bags">Air Bags</string>
+    <string name="Emergency_brake">Emergency Brake</string>
+
 
 
 
