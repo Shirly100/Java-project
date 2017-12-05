@@ -30,14 +30,14 @@ public class List_CarManager implements ICarManager
     }
 
     @Override
-   public  long addClient(ContentValues client)throws Exception
+   public  long addClient(ContentValues client)//throws Exception
     {
         Client item = ContentValuesToClient(client);
         int index=clients.indexOf(item);
-        if (index!= -1)
+        /*if (index!= -1)
         {
             throw new Exception("this client already exist.");
-        }
+        }*/
         clients.add(item);
         return item.getID();
 
@@ -84,14 +84,14 @@ public class List_CarManager implements ICarManager
         return false;
     }
     @Override
-    public String addCarModel(ContentValues model)throws  Exception
+    public String addCarModel(ContentValues model)//throws  Exception
     {
         CarModel item = ContentValuesToCarModel(model);
         int index=models.indexOf(item);
-        if (index!= -1)
+        /*if (index!= -1)
         {
             throw new Exception("this model already exist.");
-        }
+        }*/
         models.add(item);
         return item.getModelCode();
 
@@ -102,14 +102,14 @@ public class List_CarManager implements ICarManager
         return models;
     }
     @Override
-    public long addCar(ContentValues car)throws Exception
+    public long addCar(ContentValues car)//throws Exception
     {
         Car item = ContentValuesToCar(car);
         int index=cars.indexOf(item);
-        if (index!= -1)
+        /*if (index!= -1)
         {
             throw new Exception("this car already exist.");
-        }
+        }*/
         cars.add(item);
         return item.getCarNumber();
 
@@ -129,14 +129,14 @@ public class List_CarManager implements ICarManager
 
 
     @Override
-    public int addBranch(ContentValues branch) throws Exception
+    public int addBranch(ContentValues branch) //throws Exception
     {
         Branch item = ContentValuesToBranch(branch);
         int index=branches.indexOf(item);
-        if (index!= -1)
+        /*if (index!= -1)
         {
             throw new Exception("this branch already exist.");
-        }
+        }*/
         branches.add(item);
         return item.getBranchNumber();
 

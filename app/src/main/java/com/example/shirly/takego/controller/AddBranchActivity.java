@@ -3,7 +3,9 @@ package com.example.shirly.takego.controller;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.IntegerRes;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -52,11 +54,32 @@ public class AddBranchActivity extends Activity implements View.OnClickListener{
 
 
 
-            factory_dal.get_dal().addBranch(contentValues);
+            new AsyncTask<Void, Void, Integer>() {
+                @Override
+                protected void onPostExecute(Integer branchNumber) {
+                    super.onPostExecute(branchNumber);
+                    if (branchNumber > 0)
+                        Toast.makeText(getBaseContext(), "inserted branch number : " + branchNumber, Toast.LENGTH_LONG).show();
+                }
+                @Override
+                protected Integer doInBackground(Void... params) {
+
+                    return factory_dal.get_dal().addBranch(contentValues);
+
+
+
+                }
+
+
+
+            }.execute();
             Intent intent=new Intent(this,MenuActivity.class);
             startActivity(intent);
+
         }
-        catch (Exception e) {}
+        catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
 

@@ -3,6 +3,7 @@ package com.example.shirly.takego.controller;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -50,40 +51,63 @@ private Button addClientButton1;
             int id = Integer.valueOf(this.IDEditText.getText().toString());
             contentValues.put(CarConst.ClientConst.ID, id);
             contentValues.put(CarConst.ClientConst.LAST_NAME, this.lastNameEditText.getText().toString());
-            contentValues.put(CarConst.ClientConst.FIRST_NAME, this. firstNameEditText.getText().toString());
-            contentValues.put(CarConst.ClientConst.PHONE_NUMBER, this. phoneNumberEditText.getText().toString());
-            contentValues.put(CarConst.ClientConst.MAIL, this. mailEditText.getText().toString());
+            contentValues.put(CarConst.ClientConst.FIRST_NAME, this.firstNameEditText.getText().toString());
+            contentValues.put(CarConst.ClientConst.PHONE_NUMBER, this.phoneNumberEditText.getText().toString());
+            contentValues.put(CarConst.ClientConst.MAIL, this.mailEditText.getText().toString());
             contentValues.put(CarConst.ClientConst.CARD_NUMBER, this.cardNumberEditText.getText().toString());
 
-               // Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
 
-               // _loginButton.setEnabled(true);
-            int flag=0;
+            int flag = 0;
 
-                if(factory_dal.get_dal().isExistClient(contentValues))
-                {
-                    Toast.makeText(getBaseContext(), "Client Already Exist", Toast.LENGTH_LONG).show();
-                    lastNameEditText.setText("");
-                    firstNameEditText.setText("");
-                    phoneNumberEditText.setText("");
-                    IDEditText.setText("");
-                    mailEditText.setText("");
-                   cardNumberEditText.setText("");
+            if (factory_dal.get_dal().isExistClient(contentValues)) {
+                Toast.makeText(getBaseContext(), "Client Already Exist", Toast.LENGTH_LONG).show();
+                lastNameEditText.setText("");
+                firstNameEditText.setText("");
+                phoneNumberEditText.setText("");
+                IDEditText.setText("");
+                mailEditText.setText("");
+                cardNumberEditText.setText("");
 
-                    flag=1;
+                flag = 1;
 
-                }
+            }
 
-            if(flag==0)
-            {
-                factory_dal.get_dal().addClient(contentValues);
+            if (flag == 0) {
+                //factory_dal.get_dal().addClient(contentValues);
+                //Intent intent=new Intent(this,MenuActivity.class);
+                //startActivity(intent);
+                new AsyncTask<Void, Void, Long>() {
+                    @Override     protected void onPostExecute(Long idResult) {
+                        super.onPostExecute(idResult);
+                        if (idResult > 0)
+                            Toast.makeText(getBaseContext(), "insert id: " + idResult, Toast.LENGTH_LONG).show();
+                    }
+                    @Override
+                    protected Long doInBackground(Void... params) {
+
+                        return factory_dal.get_dal().addClient(contentValues);
+
+
+
+                    }
+
+
+
+                }.execute();
                 Intent intent=new Intent(this,MenuActivity.class);
                 startActivity(intent);
             }
+        }
+            catch (Exception e)
+        {}
+
+
+
+
 
             }
-        catch (Exception e) {}
-        }
+
+
 
 
 

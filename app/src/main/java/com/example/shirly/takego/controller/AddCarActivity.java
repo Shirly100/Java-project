@@ -3,10 +3,12 @@ package com.example.shirly.takego.controller;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.shirly.takego.R;
 import com.example.shirly.takego.model.backend.CarConst;
@@ -54,9 +56,29 @@ public class AddCarActivity extends Activity implements View.OnClickListener{
             long car_number = Integer.valueOf(this.carNumberEditText.getText().toString());
             contentValues.put(CarConst.CarsConst.CAR_NUMBER,car_number);
 
-            factory_dal.get_dal().addCar(contentValues);
+
+
+            new AsyncTask<Void, Void, Long>() {
+                @Override     protected void onPostExecute(Long carNumber) {
+                    super.onPostExecute(carNumber);
+                    if (carNumber > 0)
+                        Toast.makeText(getBaseContext(), "inserted carNumber: " + carNumber, Toast.LENGTH_LONG).show();
+                }
+                @Override
+                protected Long doInBackground(Void... params) {
+
+                    return factory_dal.get_dal().addCar(contentValues);
+
+
+
+                }
+
+
+
+            }.execute();
             Intent intent=new Intent(this,MenuActivity.class);
-            startActivity(intent);}
+            startActivity(intent);
+        }
         catch (Exception e) {}
     }
 

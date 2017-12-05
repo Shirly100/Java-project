@@ -11,17 +11,17 @@ import java.util.List;
 
 public interface ICarManager
 {
-    long addClient(ContentValues client) throws Exception;
+    long addClient(ContentValues client); //throws Exception;
     long removeClient(ContentValues client)throws Exception;
     long updateClient( ContentValues values) throws Exception;
     List<Client> getClients();
     boolean isExistClient(ContentValues client);
 
-    String addCarModel(ContentValues model)throws Exception;
+    String addCarModel(ContentValues model);//throws Exception;
     List<CarModel> getModels();
-   long addCar(ContentValues car)throws Exception;
+   long addCar(ContentValues car);//throws Exception;
 
-    int addBranch(ContentValues branch) throws Exception;
+    int addBranch(ContentValues branch); //throws Exception;
     List<Branch> getBranches();
     List<Car> getCars();
 

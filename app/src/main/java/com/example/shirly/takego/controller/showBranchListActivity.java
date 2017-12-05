@@ -25,6 +25,7 @@ public class showBranchListActivity extends Activity {
         List<String> list = new ArrayList<>();
 
 
+
         for (int i = 0; i < factory_dal.get_dal().getBranches().size(); i++) {
             list.add("Branch Number: "+(factory_dal.get_dal().getBranches().get(i).getBranchNumber()));
 

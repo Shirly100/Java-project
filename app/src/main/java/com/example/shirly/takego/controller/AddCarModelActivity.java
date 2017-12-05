@@ -3,6 +3,7 @@ package com.example.shirly.takego.controller;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -86,8 +87,24 @@ public class AddCarModelActivity extends Activity implements View.OnClickListene
             contentValues.put(CarConst.CarModelConst.EMERGENCY_BRAKE_ASSIST, this.spinnerBrake.getSelectedItem().toString());
             contentValues.put(CarConst.CarModelConst.TOTAL_MAX_POWER, this.Total_max_powerEditText.getText().toString());
 
+            new AsyncTask<Void, Void, String>() {
+                @Override     protected void onPostExecute(String code) {
+                    super.onPostExecute(code);
+                        Toast.makeText(getBaseContext(), "inserted model code: " + code, Toast.LENGTH_LONG).show();
+                }
+                @Override
+                protected String doInBackground(Void... params) {
 
-            factory_dal.get_dal().addCarModel(contentValues);
+                    return factory_dal.get_dal().addCarModel(contentValues);
+
+
+
+                }
+
+
+
+            }.execute();
+
             Intent intent = new Intent(this, MenuActivity.class);
             startActivity(intent);
         } catch (Exception e) {
