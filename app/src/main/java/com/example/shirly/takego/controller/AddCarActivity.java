@@ -17,7 +17,7 @@ import com.example.shirly.takego.model.entities.Car;
 
 import static com.example.shirly.takego.R.id.addCarButton1;
 
-public class AddCarActivity extends Activity implements View.OnClickListener{
+/*public class AddCarActivity extends Activity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,6 +101,6 @@ public class AddCarActivity extends Activity implements View.OnClickListener{
 
 
 
-}
+}*/
 
 

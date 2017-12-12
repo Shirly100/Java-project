@@ -15,7 +15,7 @@ import com.example.shirly.takego.R;
 import com.example.shirly.takego.model.backend.CarConst;
 import com.example.shirly.takego.model.backend.factory_dal;
 
-public class AddBranchActivity extends Activity implements View.OnClickListener{
+/*public class AddBranchActivity extends Activity implements View.OnClickListener{
 
     private EditText cityEditText;
     private EditText streetEditText;
@@ -64,7 +64,8 @@ public class AddBranchActivity extends Activity implements View.OnClickListener{
                 @Override
                 protected Integer doInBackground(Void... params) {
 
-                    return factory_dal.get_dal().addBranch(contentValues);
+                    return factory_dal.get_dal().addBranch(contentValues);  to add it!!
+
 
 
 
@@ -92,4 +93,4 @@ public class AddBranchActivity extends Activity implements View.OnClickListener{
         addBranchButton1 = (Button)findViewById( R.id.addBranchButton1 );
         addBranchButton1.setOnClickListener( this );     }
 
-}
+}*/

@@ -16,7 +16,7 @@ import com.example.shirly.takego.model.backend.factory_dal;
 import java.util.ArrayList;
 import java.util.List;
 
-public class showCarsListActivity extends Activity {
+/*public class showCarsListActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,4 +70,4 @@ public class showCarsListActivity extends Activity {
 
 
     }
-}
+}*/

@@ -44,7 +44,7 @@ public class List_CarManager implements ICarManager
     }
 
 
-    @Override
+    /*@Override
     public long removeClient(ContentValues client)throws Exception
     {
         Client item = ContentValuesToClient(client);
@@ -67,14 +67,14 @@ public class List_CarManager implements ICarManager
         return item.getID();
 
 
-    }
+    }*/
     @Override
     public List<Client> getClients()
     {
         return clients;
     }
-    @Override
-    public boolean isExistClient(ContentValues client)
+   // @Override
+   /* public boolean isExistClient(ContentValues client)
     {
         Client item = ContentValuesToClient(client);
         for (int i = 0; i < factory_dal.get_dal().getClients().size(); i++) {
@@ -82,8 +82,8 @@ public class List_CarManager implements ICarManager
                 return true;
         }
         return false;
-    }
-    @Override
+    }*/
+   /* @Override
     public String addCarModel(ContentValues model)//throws  Exception
     {
         CarModel item = ContentValuesToCarModel(model);
@@ -91,7 +91,7 @@ public class List_CarManager implements ICarManager
         /*if (index!= -1)
         {
             throw new Exception("this model already exist.");
-        }*/
+        }
         models.add(item);
         return item.getModelCode();
 
@@ -110,7 +110,7 @@ public class List_CarManager implements ICarManager
         {
             throw new Exception("this car already exist.");
         }*/
-        cars.add(item);
+        /*cars.add(item);
         return item.getCarNumber();
 
     }
@@ -137,9 +137,9 @@ public class List_CarManager implements ICarManager
         {
             throw new Exception("this branch already exist.");
         }*/
-        branches.add(item);
+       /* branches.add(item);
         return item.getBranchNumber();
 
-    }
+    }*/
 
 }
