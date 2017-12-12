@@ -153,7 +153,7 @@ public class CarConst
         contentValues.put(OrderConst. RENTAL_END_DATE, String.valueOf(order.getRental_end_date()));
         contentValues.put(OrderConst.MILEAGE_START_VALUE, order.getMileage_start_value());
         contentValues.put(OrderConst.MILEAGE_END_VALUE, order.getMileage_end_value());
-        contentValues.put(OrderConst.FUEL_FILLING, order.isFuel_filling());
+        contentValues.put(OrderConst.FUEL_FILLING, String.valueOf(order.getFuel_filling()));
         contentValues.put(OrderConst.QUANTITY_OF_FUEL, order.getQuantity_of_fuel());
         contentValues.put(OrderConst.PAYMENT, order.getPayment());
         contentValues.put(OrderConst.ORDER_NUMBER, order.getOrderNumber());
@@ -241,7 +241,7 @@ public class CarConst
         order.setRental_end_date(Date.valueOf(contentValues.getAsString(CarConst.OrderConst.RENTAL_END_DATE)));
         order.setMileage_start_value(contentValues.getAsFloat(CarConst.OrderConst.MILEAGE_START_VALUE));
         order.setMileage_end_value(contentValues.getAsFloat(CarConst.OrderConst.MILEAGE_END_VALUE));
-        order.setFuel_filling(contentValues.getAsBoolean(CarConst.OrderConst.FUEL_FILLING));
+        order.setFuel_filling(Enums.Answer.valueOf(contentValues.getAsString(CarConst.OrderConst.FUEL_FILLING)));
         order.setQuantity_of_fuel(contentValues.getAsFloat(CarConst.OrderConst.QUANTITY_OF_FUEL));
         order.setPayment(contentValues.getAsFloat(CarConst.OrderConst.PAYMENT));
         order.setOrderNumber(contentValues.getAsLong(CarConst.OrderConst.ORDER_NUMBER));

@@ -13,8 +13,8 @@ public class Order
     private Date rental_end_date;
     private  float mileage_start_value;
     private  float mileage_end_value;
-    private  boolean fuel_filling;
-    private float quantity_of_fuel;
+    private  Enums.Answer fuel_filling;
+    private float quantity_of_fuel;//can be null
     private  float payment;
     private long orderNumber;
 
@@ -74,13 +74,7 @@ public class Order
         this.mileage_end_value = mileage_end_value;
     }
 
-    public boolean isFuel_filling() {
-        return fuel_filling;
-    }
 
-    public void setFuel_filling(boolean fuel_filling) {
-        this.fuel_filling = fuel_filling;
-    }
 
     public float getQuantity_of_fuel() {
         return quantity_of_fuel;
@@ -104,5 +98,13 @@ public class Order
 
     public void setOrderNumber(long orderNumber) {
         this.orderNumber = orderNumber;
+    }
+
+    public Enums.Answer getFuel_filling() {
+        return fuel_filling;
+    }
+
+    public void setFuel_filling(Enums.Answer fuel_filling) {
+        this.fuel_filling = fuel_filling;
     }
 }
