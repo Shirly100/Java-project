@@ -36,7 +36,8 @@ public class MySQL_DBManager implements ICarManager{
     @Override
     public long addClient(ContentValues values) {
        try {
-            String result = PHPtools.POST(WEB_URL + "addClient.php", values);
+
+            String result = PHPtools.POST(WEB_URL +"addClient.php", values);
             long id = Long.parseLong(result);
             if (id > 0)
                 SetUpdate();
@@ -65,6 +66,7 @@ public class MySQL_DBManager implements ICarManager{
 
             for (int i = 0; i < array.length(); i++) {
                 JSONObject jsonObject = array.getJSONObject(i);
+
 
            //Client client = new Client();
           // client.setID(jsonObject.getLong("ID"));

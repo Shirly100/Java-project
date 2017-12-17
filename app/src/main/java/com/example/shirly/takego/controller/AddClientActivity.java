@@ -59,7 +59,7 @@ private Button addClientButton1;
 
             int flag = 0;
 
-            /*if (factory_dal.get_dal().isExistClient(contentValues)) {
+           /*if (factory_dal.get_dal().isExistClient(contentValues)) {
                 Toast.makeText(getBaseContext(), "Client Already Exist", Toast.LENGTH_LONG).show();
                 lastNameEditText.setText("");
                 firstNameEditText.setText("");
@@ -70,7 +70,7 @@ private Button addClientButton1;
 
                 flag = 1;
 
-            }*/   //to add!!
+            }  */ //to add!!
 
             if (flag == 0) {
                 //factory_dal.get_dal().addClient(contentValues);
@@ -79,8 +79,11 @@ private Button addClientButton1;
                 new AsyncTask<Void, Void, Long>() {
                     @Override     protected void onPostExecute(Long idResult) {
                         super.onPostExecute(idResult);
-                        if (idResult > 0)
+                        if (idResult > 0) {
                             Toast.makeText(getBaseContext(), "insert id: " + idResult, Toast.LENGTH_LONG).show();
+                            Intent intent = new Intent(AddClientActivity.this, MenuActivity.class);
+                            startActivity(intent);
+                        }
                     }
                     @Override
                     protected Long doInBackground(Void... params) {
@@ -94,12 +97,14 @@ private Button addClientButton1;
 
 
                 }.execute();
-                Intent intent=new Intent(this,MenuActivity.class);
-                startActivity(intent);
+
+
             }
         }
             catch (Exception e)
-        {}
+        {
+            Toast.makeText(getBaseContext(), "Error ", Toast.LENGTH_LONG).show();//i added recently
+        }
 
 
 

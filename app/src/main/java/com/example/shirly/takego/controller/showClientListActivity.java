@@ -9,12 +9,14 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.shirly.takego.R;
 import com.example.shirly.takego.model.backend.factory_dal;
 import com.example.shirly.takego.model.entities.Branch;
+import com.example.shirly.takego.model.entities.Client;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +33,7 @@ public class showClientListActivity extends Activity  {
         final ListView lv=(ListView)findViewById(R.id.lv);
 
 
-        new AsyncTask<String, Void, List<String>>() {
+       new AsyncTask<String, Void, List<String>>() {
             List<String> list = new ArrayList<>();
             @Override
             protected void onPostExecute(List<String> list) {
@@ -69,6 +71,10 @@ public class showClientListActivity extends Activity  {
 
 
         }.execute();
+
+
+
+
 
 
 
