@@ -18,32 +18,41 @@ import com.example.shirly.takego.model.entities.Client;
 
 import static com.example.shirly.takego.model.backend.CarConst.ContentValuesToClient;
 
-public class AddClientActivity extends Activity implements View.OnClickListener{
+public class AddClientActivity extends Activity implements View.OnClickListener {
 
-private EditText lastNameEditText;
-private EditText firstNameEditText;
-private EditText phoneNumberEditText;
-private EditText IDEditText;
-private EditText mailEditText;
-private EditText cardNumberEditText;
-private Button addClientButton1;
+    private EditText lastNameEditText;
+    private EditText firstNameEditText;
+    private EditText phoneNumberEditText;
+    private EditText IDEditText;
+    private EditText mailEditText;
+    private EditText cardNumberEditText;
+    private Button addClientButton1;
 
 
     @Override
     public void onClick(View v) {
-        if ( v == addClientButton1 )
-        {
+        if (v == addClientButton1) {
             addClient();
         }
     }
 
 
-        @Override
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_client);
         findViews();
-        }
+    }
+
+    private void findViews() {
+        lastNameEditText = (EditText)findViewById( R.id.lastNameEditText );
+        firstNameEditText = (EditText)findViewById( R.id.firstNameEditText );
+        phoneNumberEditText = (EditText)findViewById( R.id.phoneNumberEditText );
+        IDEditText = (EditText)findViewById( R.id.IDEditText);
+        mailEditText = (EditText)findViewById( R.id.mailEditText);
+        cardNumberEditText= (EditText)findViewById( R.id.cardNumberEditText);
+        addClientButton1 = (Button)findViewById( R.id.addClientButton1 );
+        addClientButton1.setOnClickListener( this );     }
 
     private void addClient() {
         final ContentValues contentValues = new ContentValues();
@@ -77,7 +86,8 @@ private Button addClientButton1;
                 //Intent intent=new Intent(this,MenuActivity.class);
                 //startActivity(intent);
                 new AsyncTask<Void, Void, Long>() {
-                    @Override     protected void onPostExecute(Long idResult) {
+                    @Override
+                    protected void onPostExecute(Long idResult) {
                         super.onPostExecute(idResult);
                         if (idResult > 0) {
                             Toast.makeText(getBaseContext(), "insert id: " + idResult, Toast.LENGTH_LONG).show();
@@ -85,50 +95,30 @@ private Button addClientButton1;
                             startActivity(intent);
                         }
                     }
+
                     @Override
                     protected Long doInBackground(Void... params) {
 
                         return factory_dal.get_dal().addClient(contentValues);
 
 
-
                     }
-
 
 
                 }.execute();
 
 
             }
-        }
-            catch (Exception e)
-        {
+        } catch (Exception e) {
             Toast.makeText(getBaseContext(), "Error ", Toast.LENGTH_LONG).show();//i added recently
         }
 
 
-
-
-
-            }
-
+    }
 
 
 
 
-
-
-
-
-    private void findViews() {
-        lastNameEditText = (EditText)findViewById( R.id.lastNameEditText );
-        firstNameEditText = (EditText)findViewById( R.id.firstNameEditText );
-        phoneNumberEditText = (EditText)findViewById( R.id.phoneNumberEditText );
-        IDEditText = (EditText)findViewById( R.id.IDEditText);
-        mailEditText = (EditText)findViewById( R.id.mailEditText);
-        cardNumberEditText= (EditText)findViewById( R.id.cardNumberEditText);
-        addClientButton1 = (Button)findViewById( R.id.addClientButton1 );
-        addClientButton1.setOnClickListener( this );     }
 
 
 

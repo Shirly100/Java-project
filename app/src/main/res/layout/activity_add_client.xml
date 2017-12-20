@@ -17,7 +17,7 @@ tools:context="com.example.shirly.takego.controller.AddClientActivity">
     android:textSize='20sp'/>
 <EditText
     android:id="@+id/firstNameEditText"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:ems="10"
     android:hint="@string/firstName"
@@ -25,23 +25,23 @@ tools:context="com.example.shirly.takego.controller.AddClientActivity">
     android:textSize='20sp'/>
 <EditText
     android:id="@+id/phoneNumberEditText"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:ems="10"
     android:hint="@string/phoneNumber"
-    android:inputType="text"
+    android:inputType="phone"
     android:textSize='20sp'/>
 <EditText
         android:id="@+id/IDEditText"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/ID"
-        android:inputType="text"
+        android:inputType="number"
     android:textSize='20sp'/>
  <EditText
         android:id="@+id/mailEditText"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/mail"
@@ -49,11 +49,11 @@ tools:context="com.example.shirly.takego.controller.AddClientActivity">
         android:textSize='20sp'/>
  <EditText
         android:id="@+id/cardNumberEditText"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/cardNumber"
-        android:inputType="text"
+        android:inputType="number"
         android:textSize='20sp'/>
 
  <Button

@@ -21,7 +21,7 @@ import java.util.List;
 public class MySQL_DBManager implements ICarManager{
 
     private final String UserName="ohanona";
-    private final String WEB_URL = "http://"+UserName+".vlab.jct.ac.il/Take&Go/";
+    private final String WEB_URL = "http://"+UserName+".vlab.jct.ac.il/TakeGo";
 
     private boolean updateFlag = false;
     public void printLog(String message)
@@ -37,8 +37,9 @@ public class MySQL_DBManager implements ICarManager{
     public long addClient(ContentValues values) {
        try {
 
-            String result = PHPtools.POST(WEB_URL +"addClient.php", values);
-            long id = Long.parseLong(result);
+
+            String result = PHPtools.POST(WEB_URL +"/addClient.php", values);
+            long id = Long.parseLong(result.trim());
             if (id > 0)
                 SetUpdate();
             printLog("addClient:\n" + result);
@@ -60,23 +61,23 @@ public class MySQL_DBManager implements ICarManager{
 
         try {
 
-            String str = PHPtools.GET(WEB_URL + "getClients.php");
-            JSONArray array = new JSONObject(str).getJSONArray("Clients");
+            String str = PHPtools.GET(WEB_URL + "/getClients.php");
+            JSONArray array = new JSONObject(str).getJSONArray("clients");
 
 
             for (int i = 0; i < array.length(); i++) {
                 JSONObject jsonObject = array.getJSONObject(i);
 
 
-           //Client client = new Client();
-          // client.setID(jsonObject.getLong("ID"));
-           //client.setFirstName(jsonObject.getString("first_name"));
-          // client.setLastName(jsonObject.getString("last_name"));
-          // client.setPhoneNumber(jsonObject.getString("phone_number"));
-          // client.setMail(jsonObject.getString("mail"));
-          // client.setMail(jsonObject.getString("card_number"));
+           Client client = new Client();
+           client.setID(jsonObject.getLong("_id"));
+           client.setFirstName(jsonObject.getString("firstName"));
+           client.setLastName(jsonObject.getString("lastName"));
+           client.setPhoneNumber(jsonObject.getString("phoneNumber"));
+           client.setMail(jsonObject.getString("mail"));
+           client.setMail(jsonObject.getString("cardNumber"));
            ContentValues contentValues = PHPtools.JsonToContentValues(jsonObject);
-          Client client = CarConst.ContentValuesToClient(contentValues);
+          //Client client = CarConst.ContentValuesToClient(contentValues);
 
 
                     //ContentValues contentValues = PHPtools.JsonToContentValues(jsonObject);

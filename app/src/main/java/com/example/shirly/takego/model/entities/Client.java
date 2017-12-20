@@ -8,7 +8,7 @@ public class Client
 {
     private String  lastName;
     private String firstName;
-    private long ID;
+    private long _id;
     private String  phoneNumber;
     private String mail;
     private String cardNumber;
@@ -32,11 +32,11 @@ public class Client
     }
 
     public long getID() {
-        return ID;
+        return _id;
     }
 
     public void setID(long ID) {
-        this.ID = ID;
+        this._id = ID;
     }
 
     public String getPhoneNumber() {
