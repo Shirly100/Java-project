@@ -17,7 +17,7 @@ import com.example.shirly.takego.model.backend.factory_dal;
 import java.util.ArrayList;
 import java.util.List;
 
-/*public class showBranchListActivity extends Activity {
+public class showBranchListActivity extends Activity {
 
 
     @Override
@@ -73,7 +73,7 @@ import java.util.List;
 
 
     }
-}*/
+}
 
 
 

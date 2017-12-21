@@ -17,12 +17,12 @@ public interface ICarManager
     List<Client> getClients();
     //boolean isExistClient(ContentValues client);
 
-    //String addCarModel(ContentValues model);//throws Exception;
+    String addCarModel(ContentValues model);//throws Exception;
     //List<CarModel> getModels();
-   //long addCar(ContentValues car);//throws Exception;
+   long addCar(ContentValues car);//throws Exception;
 
-    //int addBranch(ContentValues branch); //throws Exception;
-    //List<Branch> getBranches();
-    //List<Car> getCars();
+    int addBranch(ContentValues branch); //throws Exception;
+    List<Branch> getBranches();
+    List<Car> getCars();
 
 }

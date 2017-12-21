@@ -22,7 +22,7 @@ import com.example.shirly.takego.model.entities.Enums;
 import java.util.ArrayList;
 import java.util.List;
 
-/*public class AddCarModelActivity extends Activity implements View.OnClickListener {
+public class AddCarModelActivity extends Activity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -178,7 +178,7 @@ import java.util.List;
         });
 
     }
-}*/
+}
 
 
 

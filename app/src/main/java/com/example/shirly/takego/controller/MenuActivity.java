@@ -62,7 +62,7 @@ public class MenuActivity extends Activity  implements View.OnClickListener
         if ( v == addClientButton ) {
             addClient();// Handle clicks for addStudentButton
             }
-            /*else if ( v == addCarModelButton ) {
+            else if ( v == addCarModelButton ) {
             addCarrModel();// Handle clicks for addLecturerButton
             }
               else if ( v == addCarButton  ) {
@@ -74,7 +74,7 @@ public class MenuActivity extends Activity  implements View.OnClickListener
             showBranchesList();// Handle clicks for addStudentCourseButton
             } else if ( v == showCarListButton ) {
             showCarList();// Handle clicks for showStudentListButton
-            } else if ( v == showModelListButton ) {
+            } /*else if ( v == showModelListButton ) {
             showModelList();// Handle clicks for showCourseListButton
             }*/
         else if ( v == showClientListButton ) {
@@ -82,29 +82,29 @@ public class MenuActivity extends Activity  implements View.OnClickListener
         } //to add
 
          }
-   /* private  void  addBranch()
+    private  void  addBranch()
     {
         Intent intent=new Intent(MenuActivity.this,AddBranchActivity.class);
         startActivity(intent);
-    }*/ //to add
+    }
     private  void  addClient()
     {
         Intent intent=new Intent(MenuActivity.this,AddClientActivity.class);
         startActivity(intent);
     }
 
-    /*private  void  addCar()
+    private  void  addCar()
     {
         Intent intent=new Intent(this,AddCarActivity.class);
         startActivity(intent);
-    }*/ //to add!
+    }
 
-    /*private  void  addCarrModel()
+    private  void  addCarrModel()
     {
         Intent intent=new Intent(this,AddCarModelActivity.class);
         startActivity(intent);
-    }*/  //to add
-    /*private  void  showBranchesList()
+    }
+    private  void  showBranchesList()
     {
         Intent intent=new Intent(this,showBranchListActivity.class);
         startActivity(intent);
@@ -113,7 +113,7 @@ public class MenuActivity extends Activity  implements View.OnClickListener
     {
         Intent intent=new Intent(this,showCarsListActivity.class);
         startActivity(intent);
-    }*/
+    }
     private  void  showClientList()
     {
         Intent intent=new Intent(this, showClientListActivity.class);

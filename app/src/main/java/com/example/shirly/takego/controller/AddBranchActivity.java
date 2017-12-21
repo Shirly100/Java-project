@@ -15,7 +15,7 @@ import com.example.shirly.takego.R;
 import com.example.shirly.takego.model.backend.CarConst;
 import com.example.shirly.takego.model.backend.factory_dal;
 
-/*public class AddBranchActivity extends Activity implements View.OnClickListener{
+public class AddBranchActivity extends Activity implements View.OnClickListener{
 
     private EditText cityEditText;
     private EditText streetEditText;
@@ -60,11 +60,13 @@ import com.example.shirly.takego.model.backend.factory_dal;
                     super.onPostExecute(branchNumber);
                     if (branchNumber > 0)
                         Toast.makeText(getBaseContext(), "inserted branch number : " + branchNumber, Toast.LENGTH_LONG).show();
+                    Intent intent=new Intent(AddBranchActivity.this,MenuActivity.class);
+                    startActivity(intent);
                 }
                 @Override
                 protected Integer doInBackground(Void... params) {
 
-                    return factory_dal.get_dal().addBranch(contentValues);  to add it!!
+                    return factory_dal.get_dal().addBranch(contentValues);
 
 
 
@@ -74,8 +76,7 @@ import com.example.shirly.takego.model.backend.factory_dal;
 
 
             }.execute();
-            Intent intent=new Intent(this,MenuActivity.class);
-            startActivity(intent);
+
 
         }
         catch (Exception e) {
@@ -93,4 +94,4 @@ import com.example.shirly.takego.model.backend.factory_dal;
         addBranchButton1 = (Button)findViewById( R.id.addBranchButton1 );
         addBranchButton1.setOnClickListener( this );     }
 
-}*/
+}

@@ -83,7 +83,7 @@ public class List_CarManager implements ICarManager
         }
         return false;
     }*/
-   /* @Override
+    @Override
     public String addCarModel(ContentValues model)//throws  Exception
     {
         CarModel item = ContentValuesToCarModel(model);
@@ -91,16 +91,16 @@ public class List_CarManager implements ICarManager
         /*if (index!= -1)
         {
             throw new Exception("this model already exist.");
-        }
+        }*/
         models.add(item);
         return item.getModelCode();
 
     }
-    @Override
+   /* @Override
     public List<CarModel> getModels()
     {
         return models;
-    }
+    }*/
     @Override
     public long addCar(ContentValues car)//throws Exception
     {
@@ -110,7 +110,7 @@ public class List_CarManager implements ICarManager
         {
             throw new Exception("this car already exist.");
         }*/
-        /*cars.add(item);
+        cars.add(item);
         return item.getCarNumber();
 
     }
@@ -137,9 +137,9 @@ public class List_CarManager implements ICarManager
         {
             throw new Exception("this branch already exist.");
         }*/
-       /* branches.add(item);
+        branches.add(item);
         return item.getBranchNumber();
 
-    }*/
+    }
 
 }

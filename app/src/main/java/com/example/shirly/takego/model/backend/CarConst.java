@@ -14,7 +14,7 @@ public class CarConst
 {
     public static class BranchConst
     {
-        public static final String PARKING= "parking_spacees";
+        public static final String PARKING= "parking_spaces";
         public static final String BRANCH_NAME=" branchNumber";
         public static final String CITY="city";
         public static final String STREET="street";
@@ -54,7 +54,7 @@ public class CarConst
     {
         public static final String LAST_NAME="lastName";
         public static final String FIRST_NAME="firstName";
-        public static final String ID="ID";
+        public static final String ID="_id";
         public static final String  PHONE_NUMBER="phoneNumber";
         public static final String MAIL="mail";
         public static final String CARD_NUMBER="cardNumber";

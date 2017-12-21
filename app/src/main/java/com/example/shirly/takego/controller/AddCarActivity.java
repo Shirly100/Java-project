@@ -17,7 +17,7 @@ import com.example.shirly.takego.model.entities.Car;
 
 import static com.example.shirly.takego.R.id.addCarButton1;
 
-/*public class AddCarActivity extends Activity implements View.OnClickListener{
+public class AddCarActivity extends Activity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +51,7 @@ import static com.example.shirly.takego.R.id.addCarButton1;
             int branchNumber = Integer.valueOf(this.branchNumberEditText.getText().toString());
             contentValues.put(CarConst.CarsConst.BRANCH_NUMBER, branchNumber);
             contentValues.put(CarConst.CarsConst.MODEL_TYPE, this.modelTypeEditText.getText().toString());
-            float mileage = Integer.valueOf(this.mileageEditText.getText().toString());
+            float mileage = Float.valueOf(this.mileageEditText.getText().toString());
             contentValues.put(CarConst.CarsConst.MILEAGE, mileage);
             long car_number = Integer.valueOf(this.carNumberEditText.getText().toString());
             contentValues.put(CarConst.CarsConst.CAR_NUMBER,car_number);
@@ -63,6 +63,8 @@ import static com.example.shirly.takego.R.id.addCarButton1;
                     super.onPostExecute(carNumber);
                     if (carNumber > 0)
                         Toast.makeText(getBaseContext(), "inserted carNumber: " + carNumber, Toast.LENGTH_LONG).show();
+                    Intent intent=new Intent(AddCarActivity.this,MenuActivity.class);
+                    startActivity(intent);
                 }
                 @Override
                 protected Long doInBackground(Void... params) {
@@ -76,8 +78,7 @@ import static com.example.shirly.takego.R.id.addCarButton1;
 
 
             }.execute();
-            Intent intent=new Intent(this,MenuActivity.class);
-            startActivity(intent);
+
         }
         catch (Exception e) {}
     }
@@ -101,6 +102,6 @@ import static com.example.shirly.takego.R.id.addCarButton1;
 
 
 
-}*/
+}
 
 
