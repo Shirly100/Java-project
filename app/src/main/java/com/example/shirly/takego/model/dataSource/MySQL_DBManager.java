@@ -7,7 +7,9 @@ import com.example.shirly.takego.model.backend.CarConst;
 import com.example.shirly.takego.model.backend.ICarManager;
 import com.example.shirly.takego.model.entities.Branch;
 import com.example.shirly.takego.model.entities.Car;
+import com.example.shirly.takego.model.entities.CarModel;
 import com.example.shirly.takego.model.entities.Client;
+import com.example.shirly.takego.model.entities.Enums;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -200,6 +202,50 @@ public class MySQL_DBManager implements ICarManager{
         }
         return null;
     }
+
+    @Override
+    public List<CarModel> getModels(){
+        List<CarModel> result = new ArrayList<CarModel>();
+
+        try {
+
+            String str = PHPtools.GET(WEB_URL + "/getModels.php");
+            JSONArray array = new JSONObject(str).getJSONArray("models");
+
+
+            for (int i = 0; i < array.length(); i++) {
+                JSONObject jsonObject = array.getJSONObject(i);
+
+                CarModel model = new CarModel();
+                model.setModelCode(jsonObject.getString("modelCode"));
+                model.setCompany(jsonObject.getString("company"));
+                model.setModelName(jsonObject.getString("modelName"));
+                model.setEngineCapacity(jsonObject.getString("EngineCapacity"));
+                model.setGear(Enums.Gear.valueOf(jsonObject.getString("gear")));
+                model.setSeatingCapacity(jsonObject.getInt("SeatingCapacity"));
+                model.setDoorsNumber(jsonObject.getInt("DoorsNumber"));
+                model.setEmptyMass(jsonObject.getString("emptyMass"));
+                model.setFuel(jsonObject.getString("fuel"));
+                model.setEngine_type(jsonObject.getString("engine_type"));
+                model.setTurbo(Enums.Answer.valueOf(jsonObject.getString("turbo")));
+                model.setLighted_makeup_mirror(Enums.Answer.valueOf(jsonObject.getString("Lighted_makeup_mirror")));
+                model.setDigital_radio(Enums.Answer.valueOf(jsonObject.getString("Digital_radio")));
+                model.setPanorama(Enums.Answer.valueOf(jsonObject.getString("Panorama")));
+                model.setDriver_airbag(Enums.Answer.valueOf(jsonObject.getString("Driver_airbag")));
+                model.setEmergency_brake_assist(Enums.Answer.valueOf(jsonObject.getString("Emergency_brake_assist")));
+                model.setTotal_max_power(jsonObject.getString("Total_max_power"));
+
+
+
+                result.add(model);
+            }
+            return result;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 
 
 

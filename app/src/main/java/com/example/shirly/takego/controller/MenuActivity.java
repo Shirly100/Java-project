@@ -74,9 +74,9 @@ public class MenuActivity extends Activity  implements View.OnClickListener
             showBranchesList();// Handle clicks for addStudentCourseButton
             } else if ( v == showCarListButton ) {
             showCarList();// Handle clicks for showStudentListButton
-            } /*else if ( v == showModelListButton ) {
+            } else if ( v == showModelListButton ) {
             showModelList();// Handle clicks for showCourseListButton
-            }*/
+            }
         else if ( v == showClientListButton ) {
             showClientList();// Handle clicks for showCourseListButton
         } //to add
@@ -119,11 +119,11 @@ public class MenuActivity extends Activity  implements View.OnClickListener
         Intent intent=new Intent(this, showClientListActivity.class);
         startActivity(intent);
     }
-    /*private  void  showModelList()
+    private  void  showModelList()
     {
         Intent intent=new Intent(this, showModelsListActivity.class);
         startActivity(intent);
-    }*/  //to add
+    }
 
 
 }

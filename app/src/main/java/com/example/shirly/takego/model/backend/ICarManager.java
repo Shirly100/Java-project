@@ -18,7 +18,7 @@ public interface ICarManager
     //boolean isExistClient(ContentValues client);
 
     String addCarModel(ContentValues model);//throws Exception;
-    //List<CarModel> getModels();
+    List<CarModel> getModels();
    long addCar(ContentValues car);//throws Exception;
 
     int addBranch(ContentValues branch); //throws Exception;

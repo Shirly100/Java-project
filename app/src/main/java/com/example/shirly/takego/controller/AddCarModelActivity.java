@@ -91,6 +91,8 @@ public class AddCarModelActivity extends Activity implements View.OnClickListene
                 @Override     protected void onPostExecute(String code) {
                     super.onPostExecute(code);
                         Toast.makeText(getBaseContext(), "inserted model code: " + code, Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(AddCarModelActivity.this, MenuActivity.class);
+                    startActivity(intent);
                 }
                 @Override
                 protected String doInBackground(Void... params) {
@@ -105,8 +107,7 @@ public class AddCarModelActivity extends Activity implements View.OnClickListene
 
             }.execute();
 
-            Intent intent = new Intent(this, MenuActivity.class);
-            startActivity(intent);
+
         } catch (Exception e) {
         }
     }

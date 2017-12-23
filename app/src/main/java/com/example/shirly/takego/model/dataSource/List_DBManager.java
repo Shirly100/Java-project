@@ -66,5 +66,7 @@ public class List_DBManager implements ICarManager {
     public List<Car> getCars() {return null;}
     @Override
     public List<Branch> getBranches() {return null;}
+    @Override
+    public List<CarModel> getModels() {return null;}
 
 }

@@ -126,6 +126,12 @@ public class List_CarManager implements ICarManager
         return cars;
 
     }
+    @Override
+    public List<CarModel> getModels()
+    {
+        return models;
+
+    }
 
 
     @Override
