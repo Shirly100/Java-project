@@ -12,6 +12,12 @@ import java.sql.Date;
 
 public class CarConst
 {
+    public static class LoginConst
+    {
+        public static final String PASSWORD= "Password";
+        public static final String USERNAME=" User";
+
+    }
     public static class BranchConst
     {
         public static final String PARKING= "parking_spaces";
@@ -76,6 +82,15 @@ public class CarConst
         public static final String ORDER_NUMBER="orderNumber";
 
 
+    }
+    public static ContentValues LoginToContentValues(Login login) {
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(LoginConst.PASSWORD, login.getPassword());
+        contentValues.put(LoginConst.USERNAME,login.getUser());
+
+
+        return contentValues;
     }
 
     public static ContentValues BranchToContentValues(Branch branch) {
@@ -162,7 +177,15 @@ public class CarConst
         return contentValues;
     }
 
+    public static Login ContentValuesToLogin(ContentValues contentValues) {
 
+        Login login = new Login();
+        login.setPassword((contentValues.getAsString(LoginConst.PASSWORD)));
+        login.setUser(contentValues.getAsString(LoginConst.USERNAME));
+
+
+        return login;
+    }
 
 
     public static Branch ContentValuesToBranch(ContentValues contentValues) {

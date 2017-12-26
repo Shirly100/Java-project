@@ -68,7 +68,7 @@ public class AddClientActivity extends Activity implements View.OnClickListener 
 
             int flag = 0;
 
-           /*if (factory_dal.get_dal().isExistClient(contentValues)) {
+          /* if (factory_dal.get_dal().isExistClient(contentValues)) {
                 Toast.makeText(getBaseContext(), "Client Already Exist", Toast.LENGTH_LONG).show();
                 lastNameEditText.setText("");
                 firstNameEditText.setText("");

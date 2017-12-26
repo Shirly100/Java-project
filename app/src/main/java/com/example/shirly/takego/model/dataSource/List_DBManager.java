@@ -7,6 +7,7 @@ import com.example.shirly.takego.model.entities.Branch;
 import com.example.shirly.takego.model.entities.Car;
 import com.example.shirly.takego.model.entities.CarModel;
 import com.example.shirly.takego.model.entities.Client;
+import com.example.shirly.takego.model.entities.Login;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +16,7 @@ import static com.example.shirly.takego.model.backend.CarConst.ContentValuesToBr
 import static com.example.shirly.takego.model.backend.CarConst.ContentValuesToCar;
 import static com.example.shirly.takego.model.backend.CarConst.ContentValuesToCarModel;
 import static com.example.shirly.takego.model.backend.CarConst.ContentValuesToClient;
+import static com.example.shirly.takego.model.backend.CarConst.ContentValuesToLogin;
 
 /**
  * Created by Shirly on 12/12/2017.
@@ -25,12 +27,20 @@ public class List_DBManager implements ICarManager {
     static List<Car> cars;
     static List<Branch> branches;
     static List<CarModel> models;
+    static List<Login> users;
     static {
         clients = new ArrayList<>();
         cars = new ArrayList<>();
         branches = new ArrayList<>();
         models = new ArrayList<>();
+        users = new ArrayList<>();
 
+    }
+    @Override
+    public String addUser(ContentValues user) {
+        Login item = ContentValuesToLogin(user);
+        users.add(item);
+        return item.getUser();
     }
 
     @Override
@@ -68,5 +78,9 @@ public class List_DBManager implements ICarManager {
     public List<Branch> getBranches() {return null;}
     @Override
     public List<CarModel> getModels() {return null;}
+    @Override
+    public List<Login> getUsers() {return null;}
+    @Override
+    public boolean isExistClient(ContentValues values) {return false;}
 
 }

@@ -19,6 +19,7 @@ public class List_CarManager implements ICarManager
     static List<CarModel>models;
     static List<Client>clients;
     static List<Order>orders;
+    static List<Login>users;
 
 
     static {
@@ -27,6 +28,7 @@ public class List_CarManager implements ICarManager
         models = new ArrayList<>();
         clients = new ArrayList<>();
         orders = new ArrayList<>();
+        users = new ArrayList<>();
     }
 
     @Override
@@ -73,8 +75,8 @@ public class List_CarManager implements ICarManager
     {
         return clients;
     }
-   // @Override
-   /* public boolean isExistClient(ContentValues client)
+    @Override
+    public boolean isExistClient(ContentValues client)
     {
         Client item = ContentValuesToClient(client);
         for (int i = 0; i < factory_dal.get_dal().getClients().size(); i++) {
@@ -82,7 +84,7 @@ public class List_CarManager implements ICarManager
                 return true;
         }
         return false;
-    }*/
+    }
     @Override
     public String addCarModel(ContentValues model)//throws  Exception
     {
@@ -132,6 +134,12 @@ public class List_CarManager implements ICarManager
         return models;
 
     }
+    @Override
+    public List<Login> getUsers()
+    {
+        return users;
+
+    }
 
 
     @Override
@@ -145,6 +153,19 @@ public class List_CarManager implements ICarManager
         }*/
         branches.add(item);
         return item.getBranchNumber();
+
+    }
+    @Override
+    public String addUser(ContentValues user)//throws  Exception
+    {
+        Login item = ContentValuesToLogin(user);
+        int index=users.indexOf(item);
+        /*if (index!= -1)
+        {
+            throw new Exception("this model already exist.");
+        }*/
+        users.add(item);
+        return item.getPassword();
 
     }
 

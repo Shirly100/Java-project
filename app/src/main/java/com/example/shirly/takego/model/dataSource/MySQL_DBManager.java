@@ -10,6 +10,7 @@ import com.example.shirly.takego.model.entities.Car;
 import com.example.shirly.takego.model.entities.CarModel;
 import com.example.shirly.takego.model.entities.Client;
 import com.example.shirly.takego.model.entities.Enums;
+import com.example.shirly.takego.model.entities.Login;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -18,6 +19,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.shirly.takego.model.backend.CarConst.ContentValuesToClient;
 import static java.lang.Integer.parseInt;
 
 /**
@@ -202,6 +204,34 @@ public class MySQL_DBManager implements ICarManager{
         }
         return null;
     }
+    @Override
+    public List<Login> getUsers(){
+        List<Login> result = new ArrayList<Login>();
+
+        try {
+
+            String str = PHPtools.GET(WEB_URL + "/getUsers.php");
+            JSONArray array = new JSONObject(str).getJSONArray("users");
+
+
+            for (int i = 0; i < array.length(); i++) {
+                JSONObject jsonObject = array.getJSONObject(i);
+
+                Login login = new Login();
+                login.setPassword(jsonObject.getString("Password"));
+                login.setUser(jsonObject.getString("User"));
+                ;
+
+
+                result.add(login);
+            }
+            return result;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 
     @Override
     public List<CarModel> getModels(){
@@ -244,6 +274,42 @@ public class MySQL_DBManager implements ICarManager{
             e.printStackTrace();
         }
         return null;
+    }
+
+    @Override
+    public boolean isExistClient(ContentValues values) {
+
+        Client item = ContentValuesToClient(values);
+        try {
+
+            String result = PHPtools.POST(WEB_URL + "/isExistClient.php", values);
+            String is = result.trim();
+            if ( is==("NO"))
+                return false;
+            else
+                if ( is==("YES"))
+                    return true;
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        }
+        return true;
+
+    }
+    public String addUser(ContentValues values) {
+        try {
+
+
+            String result = PHPtools.POST(WEB_URL +"/addUser.php", values);
+            String user = result.trim();
+            printLog("addUser:\n" + result);
+            return user;
+        } catch (IOException e) {
+            printLog("addUser Exception:\n" + e);
+            return "Error";
+        }
     }
 
 

@@ -15,9 +15,10 @@ public interface ICarManager
     //long removeClient(ContentValues client)throws Exception;
     //long updateClient( ContentValues values) throws Exception;
     List<Client> getClients();
-    //boolean isExistClient(ContentValues client);
-
+    boolean isExistClient(ContentValues client);
+    List<Login> getUsers();
     String addCarModel(ContentValues model);//throws Exception;
+    String addUser(ContentValues user);//throws Exception;
     List<CarModel> getModels();
    long addCar(ContentValues car);//throws Exception;
 
