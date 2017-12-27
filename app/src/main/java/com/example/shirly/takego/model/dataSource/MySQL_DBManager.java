@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.example.shirly.takego.model.backend.CarConst;
 import com.example.shirly.takego.model.backend.ICarManager;
+import com.example.shirly.takego.model.backend.factory_dal;
 import com.example.shirly.takego.model.entities.Branch;
 import com.example.shirly.takego.model.entities.Car;
 import com.example.shirly.takego.model.entities.CarModel;
@@ -279,23 +280,14 @@ public class MySQL_DBManager implements ICarManager{
     @Override
     public boolean isExistClient(ContentValues values) {
 
+        List<Client> result=getClients();
         Client item = ContentValuesToClient(values);
-        try {
-
-            String result = PHPtools.POST(WEB_URL + "/isExistClient.php", values);
-            String is = result.trim();
-            if ( is==("NO"))
-                return false;
-            else
-                if ( is==("YES"))
-                    return true;
-
-
-        } catch (Exception e) {
-            e.printStackTrace();
-
+        for (int i = 0; i < result.size(); i++) {
+            if (result.get(i).getID() == item.getID())
+                return true;
         }
-        return true;
+        return false;
+
 
     }
     public String addUser(ContentValues values) {

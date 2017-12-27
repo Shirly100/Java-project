@@ -68,7 +68,7 @@ public class AddClientActivity extends Activity implements View.OnClickListener 
 
             int flag = 0;
 
-          /* if (factory_dal.get_dal().isExistClient(contentValues)) {
+           /*if (factory_dal.get_dal().isExistClient(contentValues)) {
                 Toast.makeText(getBaseContext(), "Client Already Exist", Toast.LENGTH_LONG).show();
                 lastNameEditText.setText("");
                 firstNameEditText.setText("");
@@ -79,7 +79,7 @@ public class AddClientActivity extends Activity implements View.OnClickListener 
 
                 flag = 1;
 
-            }  */ //to add!!
+            } */  //to add!!
 
             if (flag == 0) {
                 //factory_dal.get_dal().addClient(contentValues);
@@ -94,12 +94,31 @@ public class AddClientActivity extends Activity implements View.OnClickListener 
                             Intent intent = new Intent(AddClientActivity.this, MenuActivity.class);
                             startActivity(intent);
                         }
+                        if(idResult ==0)
+                        {
+                            Toast.makeText(getBaseContext(), "Client Already Exist", Toast.LENGTH_LONG).show();
+                            lastNameEditText.setText("");
+                            firstNameEditText.setText("");
+                            phoneNumberEditText.setText("");
+                            IDEditText.setText("");
+                            mailEditText.setText("");
+                            cardNumberEditText.setText("");
+                        }
                     }
 
                     @Override
                     protected Long doInBackground(Void... params) {
+                        if (factory_dal.get_dal().isExistClient(contentValues)) {
+                          long id=0;
+                            return id;
 
-                        return factory_dal.get_dal().addClient(contentValues);
+                        }
+
+                        else {
+
+                            return factory_dal.get_dal().addClient(contentValues);
+                        }
+
 
 
                     }
