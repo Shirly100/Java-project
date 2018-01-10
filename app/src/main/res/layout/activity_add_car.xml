@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:tools="http://schemas.android.com/tools"
 android:id="@+id/activity_add_car"
 android:layout_width="match_parent"
@@ -40,6 +40,22 @@ tools:context="com.example.shirly.takego.controller.AddCarActivity">
     android:inputType="text"
     android:textSize='20sp'/>
 
+    <EditText
+        android:id="@+id/occupied"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/occupied"
+        android:inputType="text"
+        android:textSize='20sp' />
+
+    <Spinner
+        android:id="@+id/spinnerOccupied"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/occupied"/>
+
 
 <Button
     android:id="@+id/addCarButton1"
@@ -48,4 +64,4 @@ tools:context="com.example.shirly.takego.controller.AddCarActivity">
     android:text="@string/add_car"
     android:textSize='20sp'
     android:onClick="AddCar"/>
-</LinearLayout>
+</TableLayout>

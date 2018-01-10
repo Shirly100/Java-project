@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <Button
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="59dp"
+        android:background="@color/colorAccent"
+        android:padding="8dp"
+        android:text="my car"
+        android:textColor="#fff"
+        android:textSize="28sp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_marginTop="2dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/carNumberTitle"
+            android:layout_width="178dp"
+            android:layout_height="29dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="left"
+            android:layout_marginTop="40dp"
+            android:background="@android:color/transparent"
+            android:hint="@string/modelType"
+            android:text="Car Number:"
+
+            android:textColor="#f00"
+            android:textSize='25sp'
+            android:layout_weight="0.00" />
+
+        <EditText
+            android:id="@+id/carNumber"
+            android:layout_width="178dp"
+            android:layout_height="29dp"
+            android:layout_gravity="right"
+            android:layout_marginTop="40dp"
+            android:layout_weight="0.01"
+            android:background="@android:color/transparent"
+            android:inputType="text"
+            android:textSize='19sp' />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="39dp"
+        android:layout_marginTop="0dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/branchNumberTitle"
+            android:layout_width="178dp"
+            android:layout_height="29dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="left"
+            android:layout_marginTop="40dp"
+            android:layout_weight="0.01"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:hint="@string/modelType"
+
+            android:text="Branch Number:"
+            android:textColor="#f00"
+            android:textSize='25sp' />
+
+        <EditText
+            android:id="@+id/branchNumber"
+            android:layout_width="178dp"
+            android:layout_height="29dp"
+            android:layout_below="@+id/carNumber"
+            android:layout_gravity="right"
+            android:layout_marginTop="40dp"
+            android:layout_weight="0.03"
+            android:background="@android:color/transparent"
+            android:inputType="text"
+            android:textSize='19sp' />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="39dp"
+        android:layout_marginTop="0dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/modelTitle"
+            android:layout_width="178dp"
+            android:layout_height="29dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="left"
+            android:layout_marginTop="40dp"
+            android:layout_weight="0.02"
+            android:background="@android:color/transparent"
+            android:hint="@string/modelType"
+
+            android:text="Model:"
+            android:textColor="#f00"
+            android:textSize='25sp' />
+
+        <EditText
+            android:id="@+id/model"
+            android:layout_width="178dp"
+            android:layout_height="29dp"
+            android:layout_below="@+id/carNumber"
+            android:layout_gravity="right"
+            android:layout_marginTop="40dp"
+            android:layout_weight="0.03"
+            android:background="@android:color/transparent"
+            android:inputType="text"
+            android:textSize='19sp' />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="39dp"
+        android:layout_marginTop="0dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/dateTitle"
+            android:layout_width="178dp"
+            android:layout_height="29dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="left"
+            android:layout_marginTop="40dp"
+            android:layout_weight="0.02"
+            android:background="@android:color/transparent"
+            android:hint="@string/modelType"
+
+            android:text="Date of Rent:"
+            android:textColor="#f00"
+            android:textSize='25sp' />
+
+        <EditText
+            android:id="@+id/date"
+            android:layout_width="178dp"
+            android:layout_height="29dp"
+            android:layout_below="@+id/carNumber"
+            android:layout_gravity="right"
+            android:layout_marginTop="40dp"
+            android:layout_weight="0.03"
+            android:background="@android:color/transparent"
+            android:inputType="text"
+            android:textSize='19sp' />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
+        android:orientation="horizontal"
+        android:layout_weight="0.04">
+        <!--android:visibility="invisible">-->
+
+        <EditText
+            android:id="@+id/mileageTitle"
+            android:layout_width="178dp"
+            android:layout_height="29dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="left"
+            android:layout_marginTop="40dp"
+            android:background="@android:color/transparent"
+            android:hint="@string/modelType"
+            android:text="Mileage:"
+
+            android:textColor="#f00"
+            android:textSize='25sp'
+            android:layout_weight="0.02" />
+
+
+
+        <LinearLayout
+            android:layout_width="178dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/upButton"
+                android:layout_width="42dp"
+                android:layout_height="36dp"
+                android:background="@drawable/timepicker_up_normal" />
+
+            <EditText
+                android:id="@+id/numberEditText"
+                android:layout_width="37dp"
+                android:layout_height="37dp"
+                android:background="@drawable/timepicker_input_selected"
+                android:gravity="center"
+                android:inputType="number"
+                android:layout_weight="0.89">
+
+                <requestFocus />
+            </EditText>
+
+            <Button
+                android:id="@+id/downButton"
+                android:layout_width="40dp"
+                android:layout_height="38dp"
+                android:background="@drawable/timepicker_down_normal" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_marginTop="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
+        android:orientation="horizontal"
+        android:layout_weight="0.04">
+        <!--android:visibility="invisible">-->
+
+        <EditText
+            android:id="@+id/fuelTitle"
+            android:layout_width="178dp"
+            android:layout_height="29dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="left"
+            android:layout_marginTop="40dp"
+            android:background="@android:color/transparent"
+            android:hint="@string/modelType"
+            android:text="fuel filling"
+
+            android:textColor="#f00"
+            android:textSize='25sp'
+            android:layout_weight="0.02" />
+
+
+
+        <Spinner
+            android:id="@+id/fuel"
+            android:layout_width="178dp"
+            android:layout_height="29dp"
+            android:layout_below="@+id/carNumber"
+            android:layout_gravity="right"
+            android:layout_marginTop="40dp"
+            android:layout_weight="0.03"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
+        android:orientation="horizontal"
+        android:layout_weight="0.04">
+        <!--android:visibility="invisible">-->
+
+        <EditText
+            android:id="@+id/howMuchTitle"
+            android:layout_width="178dp"
+            android:layout_height="29dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="left"
+            android:layout_marginTop="40dp"
+            android:background="@android:color/transparent"
+            android:hint="@string/modelType"
+            android:text="How Mauch:"
+
+            android:textColor="#f00"
+            android:textSize='25sp'
+            android:layout_weight="0.02" />
+
+        <EditText
+            android:id="@+id/quantity"
+            android:layout_width="178dp"
+            android:layout_height="29dp"
+            android:layout_below="@+id/carNumber"
+            android:layout_gravity="right"
+            android:layout_marginTop="40dp"
+            android:layout_weight="0.03"
+            android:background="@android:color/transparent"
+            android:inputType="text"
+            android:textSize='25sp'
+            android:hint="insert amount"
+            android:textColor="#FFB4ADAD"/>
+
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/returnCar"
+        android:layout_width="169dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:text="return car"
+        android:textColor="#fff"
+        android:layout_marginTop="19dp"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:text="Payment:"
+        android:textSize="24dp"
+        android:layout_marginTop="19dp"
+        android:textColor="#FF1E1D1D"
+        android:visibility="invisible"/>
+
+
+
+</LinearLayout>

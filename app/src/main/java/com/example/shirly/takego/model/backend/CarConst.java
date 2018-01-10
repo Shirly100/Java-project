@@ -33,6 +33,7 @@ public class CarConst
         public static final String  MODEL_TYPE="modelType";
         public static final String MILEAGE= "mileage";
         public static final String CAR_NUMBER= "carNumber";
+        public static final String OCCUPIED= "occupied";
     }
 
     public static class CarModelConst
@@ -113,6 +114,7 @@ public class CarConst
         contentValues.put(CarsConst.MODEL_TYPE,car.getModelType());
         contentValues.put(CarsConst.MILEAGE, car.getMileage());
         contentValues.put(CarsConst.CAR_NUMBER, car.getCarNumber());
+        contentValues.put(CarsConst.OCCUPIED, String.valueOf(car.getOccupied()));
 
         return contentValues;
     }
@@ -207,6 +209,7 @@ public class CarConst
         car.setModelType(contentValues.getAsString(CarConst.CarsConst.MODEL_TYPE));
         car.setMileage(contentValues.getAsInteger(CarConst.CarsConst.MILEAGE));
         car.setCarNumber(contentValues.getAsInteger(CarConst.CarsConst.CAR_NUMBER));
+        car.setOccupied(Enums.Answer.valueOf(contentValues.getAsString(CarsConst.OCCUPIED)));
 
 
         return car;

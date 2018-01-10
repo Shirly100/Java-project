@@ -105,6 +105,20 @@ public class MySQL_DBManager implements ICarManager{
             return "Error";
         }
     }
+
+    public int addOrder(ContentValues values) {
+        try {
+
+
+            String result = PHPtools.POST(WEB_URL +"/addOrder.php", values);
+            int id = parseInt(result.trim());
+            printLog("addOrder:\n" + result);
+            return id;
+        } catch (IOException e) {
+            printLog("addOrder Exception:\n" + e);
+            return -1;
+        }
+    }
     private void SetUpdate()
     {
         updateFlag = true;
@@ -166,6 +180,7 @@ public class MySQL_DBManager implements ICarManager{
                 car.setModelType(jsonObject.getString("modelType"));
                 float value = Float.valueOf(jsonObject.getString("mileage"));
                 car.setMileage(value);
+                car.setOccupied(Enums.Answer.valueOf(jsonObject.getString("occupied")));
 
                 result.add(car);
             }

@@ -10,7 +10,15 @@ public class Car
     private String modelType;
     private float mileage;
     private long carNumber;
+    private  Enums.Answer occupied;
 
+    public Enums.Answer getOccupied() {
+        return occupied;
+    }
+
+    public void setOccupied(Enums.Answer occupied) {
+        this.occupied = occupied;
+    }
     public int getBranchNumber() {
         return branchNumber;
     }

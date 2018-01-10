@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">Take&amp;Go</string>
+    <string name="AddClient">Add Client</string>
+    <string name="lastName">Last Name</string>
+    <string name="firstName">First Name</string>
+    <string name="phoneNumber">Phone Number</string>
+    <string name="ID">ID</string>
+    <string name="mail">Mail</string>
+    <string name="cardNumber">Card Number</string>
+    <string name="add_client">Add Client</string>
+    <string name="branchNumber">Branch Number</string>
+    <string name="modelType">Model </string>
+    <string name="mileage">Mileage </string>
+    <string name="carNumber">Car Number </string>
+    <string name="add_car">Add Car</string>
+    <string name="modelCode">Model Code</string>
+    <string name="company">Company</string>
+    <string name="modelName">Model Name</string>
+    <string name="capacity">Engine Capacity</string>
+    <string name="gear">Gear</string>
+    <string name="seats">Seating Capacity</string>
+    <string name="doors">Doors Number</string>
+    <string name="mass">Empty Mass</string>
+    <string name="fuel">Fuel</string>
+    <string name="engine">Engine</string>
+    <string name="turbo">Turbo</string>
+    <string name="mirrors">Lighted MakeUp Mirrors</string>
+    <string name="radio">Digital Radio</string>
+    <string name="panorama">Panorama</string>
+    <string name="airbags">Driver Airbags</string>
+    <string name="emergency">Emergancy Brake</string>
+    <string name="power">Total Max power</string>
+    <string name="add_car_model">Add Car Model</string>
+    <string name="parking">Parking Spaces</string>
+    <string name="city">City</string>
+    <string name="street">Street</string>
+    <string name="number">Number</string>
+    <string name="add_branch">Add Branch</string>
+    <string name="SELECT_GEAR">Select Gear</string>
+    <string name="Turbo">Turbo</string>
+    <string name="Lighted_Makeup_mirror">Lighted Makeup Mirror</string>
+    <string name="Radio">Digital Radio</string>
+    <string name="Panorama">Panorama</string>
+    <string name="Air_Bags">Air Bags</string>
+    <string name="Emergency_brake">Emergency Brake</string>
+    <string name="action_settings">Settings</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="link">
+        <a href="https://www.youtube.com/watch?v=aQIqQ2-lyO8">check our website</a>
+    </string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

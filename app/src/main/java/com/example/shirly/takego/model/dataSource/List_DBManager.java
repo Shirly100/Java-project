@@ -67,6 +67,10 @@ public class List_DBManager implements ICarManager {
         models.add(item);
         return item.getModelCode();
     }
+//    @Override
+//    public String addOrder(ContentValues order) {
+//        return  null;
+//    }
 
     @Override
     public List<Client> getClients() {
