@@ -224,6 +224,7 @@ public class MySQL_DBManager implements ICarManager{
                 Login login = new Login();
                 login.setPassword(jsonObject.getString("Password"));
                 login.setUser(jsonObject.getString("User"));
+                login.setClientNumber(jsonObject.getInt("clientNumber"));
                 ;
 
 
@@ -306,7 +307,7 @@ public class MySQL_DBManager implements ICarManager{
             return "Error";
         }
     }
-
+    @Override
     public String getDesc(long id)
     {
         int index=(int)id;
@@ -316,6 +317,14 @@ public class MySQL_DBManager implements ICarManager{
         String desc="brunch number: "+number+"\n"+"parking spaces: "+parking+"\n"+"address: "+address;
         return desc;
 
+
+    }
+    @Override
+    public String getAddressLink(long id)
+    {
+        int index=(int)id;
+        String address=getBranches().get(index).getCity()+"+"+getBranches().get(index).getStreet()+"+"+getBranches().get(index).getNumber();
+        return address;
 
     }
 
@@ -368,6 +377,21 @@ public class MySQL_DBManager implements ICarManager{
         try {
 
             String str = PHPtools.POST(WEB_URL + "/returnCar.php",values);
+            return str;
+
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+
+    }
+    public String updateOrder(ContentValues values)
+    {
+        try {
+
+            String str = PHPtools.POST(WEB_URL + "/updateOrder.php",values);
             return str;
 
 

@@ -110,6 +110,7 @@ public class BranchesFragment extends Fragment    {
        View rootView = inflater.inflate(R.layout.branches_and_cars, container, false);
        final ListView lv=(ListView) rootView.findViewById(R.id.listView1);
        final SearchView sv=(SearchView) rootView.findViewById(R.id.searchView1);
+       final  Button link=(Button)rootView.findViewById(R.id.linkToMap) ;
        List<String> str;
 
        new AsyncTask<String, Void, List<String>>() {
@@ -184,6 +185,14 @@ public class BranchesFragment extends Fragment    {
                        if(lv2.getVisibility() == View.GONE && text.getVisibility() == View.GONE){
                            text.setText(w.getDec());
                            text.setVisibility(View.VISIBLE);
+                           link.setVisibility(View.VISIBLE);
+                           link.setOnClickListener(new View.OnClickListener() {
+                               @Override
+                               public void onClick(View arg0) {
+                                   Intent intent = new Intent(getActivity(), web.class);
+                                   intent.putExtra("link_location",w.getAdress());
+                                   startActivity(intent);
+                                             }});
 
                            lv2.setVisibility(View.VISIBLE);
 
@@ -191,6 +200,7 @@ public class BranchesFragment extends Fragment    {
                        }else{
                            lv2.setVisibility(View.GONE);
                            text.setVisibility(View.GONE);
+                           link.setVisibility(View.GONE);
                        }
 
 
@@ -208,10 +218,12 @@ public class BranchesFragment extends Fragment    {
                        String city=null;
                        String street=null;
                        int Anumber=0;
+                       int index=0;
 
 
                        for (int i = 0; i < factory_dal.get_dal().getBranches().size(); i++) {
                            if (factory_dal.get_dal().getBranches().get(i).getBranchNumber() == branch_number) {
+                               index=i;
                                Bnumber = factory_dal.get_dal().getBranches().get(i).getBranchNumber();
                                parking = factory_dal.get_dal().getBranches().get(i).getParking_spacees();
                                city = factory_dal.get_dal().getBranches().get(i).getCity();
@@ -252,8 +264,10 @@ public class BranchesFragment extends Fragment    {
 
                        Wrapper w = new Wrapper();
                        w.setList(list);
-                       String desc="\n"+factory_dal.get_dal().getDesc(id);
+                       String desc="\n"+factory_dal.get_dal().getDesc(index);
+                       String link=factory_dal.get_dal().getAddressLink(index);
                        w.setDec(desc);
+                       w.setAdress(link);
 
                        return w;
 
@@ -316,7 +330,7 @@ public class BranchesFragment extends Fragment    {
                                    }
                                }
                                Date date = new Date();
-                               String rental_start= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(date);
+                               String rental_start= new SimpleDateFormat("MM/dd/yyyy HH:mm:ss").format(date);
                                Random r = new Random();
                                float mileage_start = mileage;
                                Enums.Order order= Enums.Order.OPEN;
@@ -330,6 +344,9 @@ public class BranchesFragment extends Fragment    {
                                contentValues.put(CarConst.OrderConst.CLIENT_NUMBER,clientNumber);
                                contentValues.put(CarConst.OrderConst.CAR_NUMBER, carNumber);
                                contentValues.put(CarConst.OrderConst.RENTAL_START_DATE, rental_start);
+                               Enums.Answer filing=Enums.Answer.NO;
+                               contentValues.put(CarConst.OrderConst.FUEL_FILLING, filing.toString());
+
                                return factory_dal.get_dal().addOrder(contentValues);
 
                            }

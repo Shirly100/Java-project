@@ -328,7 +328,8 @@
         android:textSize="24dp"
         android:layout_marginTop="19dp"
         android:textColor="#FF1E1D1D"
-        android:visibility="invisible"/>
+        android:visibility="invisible"
+        android:onClick="return my car"/>
 
 
 

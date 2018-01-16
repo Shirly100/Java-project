@@ -201,5 +201,7 @@ public class List_CarManager implements ICarManager
     }
     public String updateOccupied(ContentValues order){return null;}
     public String returnCar(ContentValues order){return null;}
+    public String updateOrder(ContentValues values){return null;}
+    public  String getAddressLink(long id){return null;}
 
 }

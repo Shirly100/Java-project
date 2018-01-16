@@ -43,33 +43,36 @@
         <TextView
             android:id="@+id/desc"
             android:layout_width="match_parent"
-            android:layout_height="126dp"
+            android:layout_height="70dp"
             android:width="160sp"
             android:height="40sp"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="46dp"
+
             android:textSize="20sp"
             android:visibility="invisible"
 
-
-            />
-
+            android:layout_weight="0.03" />
 
 
-
-
-
-
-
-
+    <Button
+        android:id="@+id/linkToMap"
+        android:layout_width="125dp"
+        android:layout_height="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        android:layout_weight="0.02"
+        android:text="see the map"
+        android:layout_gravity="left"
+        android:visibility="invisible"/>
 
     <ListView
         android:id="@+id/listviewt2"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_weight="0.25"
+        android:layout_weight="0.12"
         android:drawSelectorOnTop="false"
         android:visibility="invisible"
+        android:layout_marginTop="30dp"
          >
     </ListView>
 </LinearLayout>

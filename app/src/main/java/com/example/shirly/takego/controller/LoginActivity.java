@@ -67,22 +67,22 @@ public class LoginActivity extends Activity implements View.OnClickListener{
                             flag = 1;
                         }
                     }
-                        if(flag==0) {
-                            Toast.makeText(getBaseContext(), "Wrong user or password", Toast.LENGTH_LONG).show();
-                            LoginActivity.this.etPassword.setText("");
-                            LoginActivity.this.etUsername.setText("");
-                        }
-                        else
-                        {
-
-                            Toast.makeText(getBaseContext(), "successfully logged in", Toast.LENGTH_LONG).show();
-                            Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
-                            startActivity(intent);
-                        }
-
-
-
+                    if(flag==0) {
+                        Toast.makeText(getBaseContext(), "Wrong user or password", Toast.LENGTH_LONG).show();
+                        LoginActivity.this.etPassword.setText("");
+                        LoginActivity.this.etUsername.setText("");
                     }
+                    else
+                    {
+
+                        Toast.makeText(getBaseContext(), "successfully logged in", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
+                        startActivity(intent);
+                    }
+
+
+
+                }
 
                 @Override
                 protected List<Login> doInBackground(Void... params) {

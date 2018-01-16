@@ -9,6 +9,15 @@ import java.util.List;
 public class Wrapper {
     public String dec;
     public List<String> list;
+    public String adress;
+
+    public String getAdress() {
+        return adress;
+    }
+
+    public void setAdress(String adress) {
+        this.adress = adress;
+    }
 
     public String getDec() {
         return dec;

@@ -37,6 +37,8 @@ public interface ICarManager
     int addOrder(ContentValues order) ;
     String updateOccupied(ContentValues car);
     String returnCar(ContentValues car);
+     String updateOrder(ContentValues values);
+    String getAddressLink(long id);
 
 
 

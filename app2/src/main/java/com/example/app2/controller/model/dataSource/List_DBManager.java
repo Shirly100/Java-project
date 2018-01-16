@@ -99,5 +99,7 @@ public class List_DBManager implements ICarManager {
     public int addOrder(ContentValues order){return -1;}
     public String updateOccupied(ContentValues order){return null;}
     public String returnCar(ContentValues order){return null;}
+    public String updateOrder(ContentValues values){return null;}
+    public  String getAddressLink(long id){return null;}
 
 }
