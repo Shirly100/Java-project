@@ -55,7 +55,7 @@ public class showCarsListActivity extends Activity {
         protected List<String> doInBackground(String... params) {
 
             for (int i = 0; i < factory_dal.get_dal().getCars().size(); i++) {
-                list.add("Car Number: " + (factory_dal.get_dal().getCars().get(i).getCarNumber()));
+                list.add((factory_dal.get_dal().getCars().get(i).getCarNumber()+", "+factory_dal.get_dal().getCars().get(i).getModelType()));
             }
 
             return list;

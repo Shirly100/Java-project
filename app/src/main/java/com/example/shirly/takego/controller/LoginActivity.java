@@ -65,6 +65,7 @@ public class LoginActivity extends Activity implements View.OnClickListener{
                     for (int i = 0; i < users.size(); i++) {
                         if (users.get(i).getPassword().equals(LoginActivity.this.etPassword.getText().toString()) && users.get(i).getUser().equals(LoginActivity.this.etUsername.getText().toString())) {
                             flag = 1;
+
                         }
                     }
                     if(flag==0) {

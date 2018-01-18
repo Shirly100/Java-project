@@ -4,17 +4,15 @@
     android:layout_height="match_parent"
     tools:context="com.example.app2.controller.MainFragment">
 
-    <Button
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="MAIN"
-        android:padding="8dp"
-        android:textColor="#fff"
-        android:background="@color/colorAccent"
-        android:textSize="28sp"
-        android:id="@+id/main_button"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
+    <TextView
+        android:id="@+id/descService"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:width="160sp"
+        android:height="40sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:visibility="invisible"/>
 
 
 </RelativeLayout>

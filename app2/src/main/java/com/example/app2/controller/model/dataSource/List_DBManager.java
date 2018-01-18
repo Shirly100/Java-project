@@ -101,5 +101,6 @@ public class List_DBManager implements ICarManager {
     public String returnCar(ContentValues order){return null;}
     public String updateOrder(ContentValues values){return null;}
     public  String getAddressLink(long id){return null;}
+    public boolean getClosedOrders(){return false;}
 
 }

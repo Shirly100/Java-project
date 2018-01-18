@@ -1,9 +1,14 @@
 package com.example.app2.controller.model.dataSource;
 
 import android.content.ContentValues;
+import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 
+import com.example.app2.controller.MyReciever;
+import com.example.app2.controller.MyService;
 import com.example.app2.controller.model.backend.ICarManager;
+import com.example.app2.controller.model.backend.factory_dal;
 import com.example.app2.controller.model.entities.Branch;
 import com.example.app2.controller.model.entities.Car;
 import com.example.app2.controller.model.entities.CarModel;
@@ -17,8 +22,12 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import static com.example.app2.controller.model.backend.CarConst.ContentValuesToBranch;
 import static com.example.app2.controller.model.backend.CarConst.ContentValuesToClient;
@@ -33,6 +42,12 @@ public class MySQL_DBManager implements ICarManager{
 
     private final String UserName="ohanona";
     private final String WEB_URL = "http://"+UserName+".vlab.jct.ac.il/TakeGo";
+
+//    Context context ;
+//    public MySQL_DBManager() {
+//
+//
+//    }
 
     private boolean updateFlag = false;
     public void printLog(String message)
@@ -452,6 +467,78 @@ public class MySQL_DBManager implements ICarManager{
         }
         return null;
     }
+
+
+
+
+    @Override
+    public boolean getClosedOrders(){
+        List<Order> result = new ArrayList<Order>();
+
+        try {
+
+            String str = PHPtools.GET(WEB_URL + "/getClosedOrders.php");
+            JSONArray array = new JSONObject(str).getJSONArray("order");
+
+
+            for (int i = 0; i < array.length(); i++) {
+                JSONObject jsonObject = array.getJSONObject(i);
+
+                Order order = new Order();
+                order.setOrderNumber(jsonObject.getInt("orderNumber"));
+                order.setClientNumber(jsonObject.getInt("clientNumber"));
+                order.setOrder(Enums.Order.valueOf(jsonObject.getString("order")));
+                order.setCarNumber(jsonObject.getInt("carNumber"));
+                order.setRental_srart_date(jsonObject.getString("rental_srart_date"));
+                order.setRental_end_date(jsonObject.getString("rental_end_date"));
+                order.setMileage_start_value(BigDecimal.valueOf(jsonObject.getDouble("mileage_start_value")).floatValue());
+                order.setMileage_end_value(BigDecimal.valueOf(jsonObject.getDouble("mileage_end_value")).floatValue());
+                order.setFuel_filling(Enums.Answer.valueOf(jsonObject.getString("fuel_filling")));
+                order.setQuantity_of_fuel(BigDecimal.valueOf(jsonObject.getDouble("quantity_of_fuel")).floatValue());
+                order.setPayment(BigDecimal.valueOf(jsonObject.getDouble("payment")).floatValue());
+
+
+
+                result.add(order);
+            }
+
+            Date date = new Date();
+            String now= new SimpleDateFormat("MM/dd/yyyy HH:mm:ss").format(date);
+            for (int i = 0; i < result.size(); i++)
+            {
+                String closedDate=result.get(i).getRental_end_date();
+                SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+                Date dateEnd = null;
+                try {
+                    dateEnd = sdf.parse(closedDate);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                SimpleDateFormat sdf1 = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+                Date dateNow = null;
+                try {
+                    dateNow = sdf1.parse(now);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                long diffInMs = dateNow.getTime() - dateEnd.getTime();
+
+                long diffInSec = TimeUnit.MILLISECONDS.toSeconds(diffInMs);
+                if(diffInSec<=10)
+                {
+                    return true;
+
+                }
+
+
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
 
 
 

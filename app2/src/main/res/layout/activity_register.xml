@@ -22,15 +22,56 @@
             android:layout_marginBottom="24dp"
             android:layout_gravity="center_horizontal"
             android:layout_weight="0.39" />
+        <EditText
+            android:id="@+id/lastNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapWords"
+            android:hint="Last Name"
+            android:textColorHint="#FFFFFF"
+            android:backgroundTint="@android:color/white"/>
+        <EditText
+            android:id="@+id/firstNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapWords"
+            android:hint="First Name"
+            android:textColorHint="#FFFFFF"
+            android:backgroundTint="@android:color/white"/>
+        <EditText
+            android:id="@+id/phoneNumberEditText"
+            android:hint="@string/phoneNumber"
+            android:inputType="phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="#FFFFFF"
+            android:backgroundTint="@android:color/white"/>
+        <EditText
+            android:id="@+id/IDEditText"
+            android:hint="@string/ID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapWords"
+            android:textColorHint="#FFFFFF"
+            android:backgroundTint="@android:color/white"/>
+        <EditText
+            android:id="@+id/mailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapWords"
+            android:hint="Mail"
+            android:textColorHint="#FFFFFF"
+            android:backgroundTint="@android:color/white"/>
+        <EditText
+            android:id="@+id/cardNumberEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapWords"
+            android:hint="Card number"
+            android:textColorHint="#FFFFFF"
+            android:backgroundTint="@android:color/white"/>
 
 
-            <EditText android:id="@+id/name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textCapWords"
-                android:hint="Name"
-                android:textColorHint="#FFFFFF"
-                android:backgroundTint="@android:color/white"/>
 
 
 
@@ -41,8 +82,8 @@
                 android:hint="UserName"
                 android:textColorHint="#FFFFFF"
                 android:backgroundTint="@android:color/white"
-                android:drawableLeft="@drawable/ic_action_user"/>
-
+                android:drawableLeft="@drawable/ic_action_user"
+                android:layout_marginTop="40dp"/>
 
 
             <EditText android:id="@+id/password_reg"

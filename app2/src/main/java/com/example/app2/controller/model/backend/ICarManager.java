@@ -39,6 +39,7 @@ public interface ICarManager
     String returnCar(ContentValues car);
      String updateOrder(ContentValues values);
     String getAddressLink(long id);
+   boolean getClosedOrders();
 
 
 

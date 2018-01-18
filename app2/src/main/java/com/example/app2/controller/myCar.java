@@ -1,7 +1,9 @@
 package com.example.app2.controller;
 
 
+import android.content.BroadcastReceiver;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Typeface;
@@ -32,6 +34,7 @@ import java.util.Date;
 import java.util.List;
 
 
+import static com.example.app2.controller.LoginActivity.clientNumber;
 import static java.lang.String.valueOf;
 
 /**
@@ -40,14 +43,14 @@ import static java.lang.String.valueOf;
 public class myCar extends Fragment implements View.OnClickListener {
 
 
-    public myCar() {
-        // Required empty public constructor
-    }
+//    public myCar() {
+//        // Required empty public constructor
+//    }
 
     private Button upButton;
     private Button downButton;
     private EditText editText;
-    private float uprange = 400;
+    private float uprange = 100000;
     private float downrange = 0;
     private float values = 0;
     private Spinner spinnerFilling;
@@ -58,7 +61,8 @@ public class myCar extends Fragment implements View.OnClickListener {
     private Button returnCar;
     private EditText quantity;
     private TextView textView2;
-    private int clientNumber=314793910;
+
+
 
 
 
@@ -66,6 +70,9 @@ public class myCar extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+
+
         // Inflate the layout for this fragment;
         View rootView = inflater.inflate(R.layout.my_car, container, false);
 
@@ -74,12 +81,12 @@ public class myCar extends Fragment implements View.OnClickListener {
 
         spinnerFilling = (Spinner) rootView.findViewById(R.id.fuel);
         setSpeaner(spinnerFilling);
-
-        findMyCar(clientNumber,rootView);
+        findMyCar(LoginActivity.clientNumber,rootView);
         quantity = (EditText) rootView.findViewById(R.id.quantity);
 
         returnCar = (Button) rootView.findViewById(R.id.returnCar);
         returnCar.setOnClickListener( this );
+
 
 
 
@@ -192,14 +199,14 @@ public class myCar extends Fragment implements View.OnClickListener {
                      String[] values = new String[4];
 
                     for (int i = 0; i < factory_dal.get_dal().getOrders().size(); i++) {
-                        if (factory_dal.get_dal().getOrders().get(i).getClientNumber() == id) {
+                        if (factory_dal.get_dal().getOrders().get(i).getClientNumber() == id&&factory_dal.get_dal().getOrders().get(i).getOrder().toString() == "OPEN") {
                             myCarNumber = factory_dal.get_dal().getOrders().get(i).getCarNumber();
                             myDate=factory_dal.get_dal().getOrders().get(i).getRental_srart_date();
-                            for (int j = 0; j < factory_dal.get_dal().getCars().size(); i++) {
-                                if(factory_dal.get_dal().getCars().get(i).getCarNumber()==myCarNumber)
+                            for (int j = 0; j < factory_dal.get_dal().getCars().size(); j++) {
+                                if(factory_dal.get_dal().getCars().get(j).getCarNumber()==myCarNumber)
                                 {
-                                    myBranchNumber = factory_dal.get_dal().getCars().get(i).getBranchNumber();
-                                    myModel = factory_dal.get_dal().getCars().get(i).getModelType();
+                                    myBranchNumber = factory_dal.get_dal().getCars().get(j).getBranchNumber();
+                                    myModel = factory_dal.get_dal().getCars().get(j).getModelType();
                                     break;
 
                                 }
@@ -235,7 +242,7 @@ public class myCar extends Fragment implements View.OnClickListener {
             final ContentValues contentValues = new ContentValues();
 
             float mileage_now =Float.parseFloat(myCar.this.textView2.getText().toString());
-            contentValues.put(CarConst.OrderConst.MILEAGE_END_VALUE, valueOf(mileage_now).toString());
+
             contentValues.put(CarConst.OrderConst.FUEL_FILLING, myCar.this.spinnerFilling.getSelectedItem().toString());
             String isFill=myCar.this.spinnerFilling.getSelectedItem().toString();
             contentValues.put(CarConst.OrderConst.QUANTITY_OF_FUEL, myCar.this.quantity.getText().toString());
@@ -261,7 +268,7 @@ public class myCar extends Fragment implements View.OnClickListener {
                 protected String doInBackground(Void... params) {
 
                     for (int i = 0; i < factory_dal.get_dal().getOrders().size(); i++) {
-                        if (factory_dal.get_dal().getOrders().get(i).getClientNumber() == myCar.this.clientNumber) {
+                        if (factory_dal.get_dal().getOrders().get(i).getClientNumber() == LoginActivity.clientNumber&&valueOf(factory_dal.get_dal().getOrders().get(i).getOrder()).toString()=="OPEN") {
                             long orderNumber = factory_dal.get_dal().getOrders().get(i).getOrderNumber();
                             contentValues.put(CarConst.OrderConst.ORDER_NUMBER, valueOf(orderNumber).toString());
                             float mileage_start = (factory_dal.get_dal().getOrders().get(i).getMileage_start_value());
@@ -294,7 +301,7 @@ public class myCar extends Fragment implements View.OnClickListener {
 
 
                             String time=valueOf(minutes).toString();
-                            float total_mileage = mileage_now - mileage_start;
+                            float total_mileage = mileage_now -mileage_start;
                             double payment=0;
                             if(isFill=="YES")
                             {
@@ -311,11 +318,12 @@ public class myCar extends Fragment implements View.OnClickListener {
                             Enums.Order returnOrder = Enums.Order.CLOSE;
                             contentValues.put(CarConst.OrderConst.PAYMENT, strpayment);
                             contentValues.put(CarConst.OrderConst.ORDER, returnOrder.toString());
+                            contentValues.put(CarConst.OrderConst.MILEAGE_END_VALUE, valueOf(mileage_now).toString());
 
                             ContentValues CV = new ContentValues();
                             long mycarNumber = factory_dal.get_dal().getOrders().get(i).getCarNumber();
                             CV.put(CarConst.CarsConst.CAR_NUMBER, mycarNumber);
-                            CV.put(CarConst.CarsConst.MILEAGE, valueOf(totalMileage).toString());
+                            CV.put(CarConst.CarsConst.MILEAGE, valueOf(mileage_now).toString());
                             factory_dal.get_dal().returnCar(CV);
                             factory_dal.get_dal().updateOrder(contentValues);
                             //return strpayment;
@@ -356,9 +364,28 @@ public class myCar extends Fragment implements View.OnClickListener {
         }
     }
 
+    private final BroadcastReceiver brod = new BroadcastReceiver()
+    {
+        @Override
+        public void onReceive(Context context, Intent intent)
+        {
+
+            Toast.makeText(context,"New cars are available",Toast.LENGTH_LONG).show();
+        }
+    };
 
 
 
+    @Override
+    public void onResume(){
+        super.onResume();
+        // put your code here...
+
+
+
+        getActivity().startService(new Intent(getActivity(),MyReciever.class));
+
+    }
 
 
 

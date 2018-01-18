@@ -63,5 +63,7 @@ tools:context="com.example.shirly.takego.controller.AddClientActivity">
      android:text="@string/add_client"
      android:textColor="@color/colorPrimary"
      android:onClick="addClient"
-     android:textSize='20sp'/>
+     android:textSize='20sp'
+     android:layout_marginRight="200dp"
+     android:background="@color/purpel"/>
 </LinearLayout>

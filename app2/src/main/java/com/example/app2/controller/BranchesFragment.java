@@ -53,6 +53,7 @@ import static android.provider.AlarmClock.EXTRA_MESSAGE;
 public class BranchesFragment extends Fragment    {
 
 
+
    /* ListView lv;
     SearchView sv;
     String[] teams={"Man Utd","Man City","Chelsea","Arsenal","Liverpool","Totenham"};
@@ -107,6 +108,11 @@ public class BranchesFragment extends Fragment    {
 
        // ================================================
        // Inflate the layout for this fragment
+
+
+
+       String clientNumber = getArguments().getString("clientNumber");
+
        View rootView = inflater.inflate(R.layout.branches_and_cars, container, false);
        final ListView lv=(ListView) rootView.findViewById(R.id.listView1);
        final SearchView sv=(SearchView) rootView.findViewById(R.id.searchView1);
@@ -334,7 +340,7 @@ public class BranchesFragment extends Fragment    {
                                Random r = new Random();
                                float mileage_start = mileage;
                                Enums.Order order= Enums.Order.OPEN;
-                               String clientNumber="314793910";
+
 
                                final ContentValues contentValues = new ContentValues();
 

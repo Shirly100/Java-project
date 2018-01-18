@@ -5,7 +5,8 @@ android:id="@+id/activity_add_car"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:orientation="vertical"
-tools:context="com.example.shirly.takego.controller.AddCarActivity">
+tools:context="com.example.shirly.takego.controller.AddCarActivity"
+    android:weightSum="1">
 
 <EditText
     android:id="@+id/branchNumberEditText"
@@ -14,7 +15,8 @@ tools:context="com.example.shirly.takego.controller.AddCarActivity">
     android:ems="10"
     android:hint="@string/branchNumber"
     android:inputType="text"
-    android:textSize='20sp'/>
+    android:textSize='20sp'
+   />
 <EditText
     android:id="@+id/modelTypeEditText"
     android:layout_width="match_parent"
@@ -59,9 +61,12 @@ tools:context="com.example.shirly.takego.controller.AddCarActivity">
 
 <Button
     android:id="@+id/addCarButton1"
-    android:layout_width="wrap_content"
+    android:layout_width="280dp"
     android:layout_height="wrap_content"
     android:text="@string/add_car"
     android:textSize='20sp'
-    android:onClick="AddCar"/>
+    android:onClick="AddCar"
+    android:layout_marginRight="200dp"
+    android:background="@color/colorPrimaryDark"
+    android:textColor="#fff"/>
 </TableLayout>

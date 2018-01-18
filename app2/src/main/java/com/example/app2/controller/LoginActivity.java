@@ -22,6 +22,7 @@ import com.example.app2.controller.model.entities.Login;
 import java.util.List;
 
 public class LoginActivity extends Activity implements View.OnClickListener{
+    public static int clientNumber;
 
     Button bLogin;
     EditText etUsername, etPassword;
@@ -30,6 +31,9 @@ public class LoginActivity extends Activity implements View.OnClickListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //starts service
+
+
         setContentView(R.layout.activity_login);
         etUsername=(EditText)findViewById(R.id.userName) ;
         etPassword=(EditText)findViewById(R.id.password) ;
@@ -37,6 +41,18 @@ public class LoginActivity extends Activity implements View.OnClickListener{
         bLogin=(Button)findViewById(R.id.btn_login);
         bLogin.setOnClickListener(this);
         tvRegisterLink.setOnClickListener(this);
+        etPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(etUsername.getText().toString()!="")
+                {
+                    loadSharedPreferences(etUsername.getText().toString());
+                }
+
+            }
+        });
+
+
 
     }
     @Override
@@ -53,6 +69,7 @@ public class LoginActivity extends Activity implements View.OnClickListener{
             startActivity(new Intent(this,RegisterActivity.class));
 
         }
+
     }
     private void Login() {
         final ContentValues contentValues = new ContentValues();
@@ -65,9 +82,14 @@ public class LoginActivity extends Activity implements View.OnClickListener{
                     super.onPostExecute(users);
                     int flag=0;
                     Boolean answer =existInSharedPreferences();
+                     clientNumber=0;
                     for (int i = 0; i < users.size(); i++) {
                         if (users.get(i).getPassword().equals(LoginActivity.this.etPassword.getText().toString()) && users.get(i).getUser().equals(LoginActivity.this.etUsername.getText().toString())) {
                             flag = 1;
+                            clientNumber=users.get(i).getClientNumber();
+                            break;
+
+
                         }
                     }
                     if(flag==0) {
@@ -88,6 +110,10 @@ public class LoginActivity extends Activity implements View.OnClickListener{
                             Toast.makeText(getBaseContext(), "successfully logged in", Toast.LENGTH_LONG).show();
                             Intent intent = new Intent(LoginActivity.this, Main2Activity.class);
                             startActivity(intent);
+
+
+
+
                         }
                     }
 
@@ -118,7 +144,7 @@ public class LoginActivity extends Activity implements View.OnClickListener{
         String Username = etUsername.getText().toString();
         String password = etPassword.getText().toString();
         String key=Username;
-        String value=password;
+        String value = Username+"_Password";;
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
     if (sharedPreferences.contains(key)&&sharedPreferences.contains(value))
         {
@@ -135,14 +161,26 @@ public class LoginActivity extends Activity implements View.OnClickListener{
             String Username = etUsername.getText().toString();
             String password = etPassword.getText().toString();
             String key=Username;
-            String value=password;
+            String value = Username+"_Password";
             editor.putString(key, Username);
+            editor.commit();
             editor.putString(value, password);
             editor.commit();
             Toast.makeText(this, "save username and password Preferences", Toast.LENGTH_SHORT).show();
         } catch (Exception ex) {
             Toast.makeText(this, "failed to save Preferences", Toast.LENGTH_SHORT).show();
         } }
+
+
+    private void loadSharedPreferences(String key) {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        if (sharedPreferences.contains(key+"_Password")) {
+            etPassword.setText(sharedPreferences.getString(key+"_Password", null));
+            Toast.makeText(this, "load password", Toast.LENGTH_SHORT).show();
+        }
+
+
+    }
 
 
 

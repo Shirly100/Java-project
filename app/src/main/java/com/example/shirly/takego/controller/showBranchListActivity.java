@@ -57,7 +57,7 @@ public class showBranchListActivity extends Activity {
             protected List<String> doInBackground(String... params) {
 
                 for (int i = 0; i < factory_dal.get_dal().getBranches().size(); i++) {
-                    list.add("Branch Number: " + (factory_dal.get_dal().getBranches().get(i).getBranchNumber()));
+                    list.add((factory_dal.get_dal().getBranches().get(i).getBranchNumber())+", "+(factory_dal.get_dal().getBranches().get(i).getCity()));
 
                 }
                 return list;

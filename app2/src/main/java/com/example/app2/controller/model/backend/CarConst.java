@@ -22,6 +22,7 @@ public class CarConst
     {
         public static final String PASSWORD= "Password";
         public static final String USERNAME=" User";
+        public static final String CLIENTNUMBER="clientNumber";
 
     }
     public static class BranchConst
@@ -95,6 +96,7 @@ public class CarConst
         ContentValues contentValues = new ContentValues();
         contentValues.put(LoginConst.PASSWORD, login.getPassword());
         contentValues.put(LoginConst.USERNAME,login.getUser());
+        contentValues.put(LoginConst.CLIENTNUMBER,login.getClientNumber());
 
 
         return contentValues;
@@ -190,6 +192,7 @@ public class CarConst
         Login login = new Login();
         login.setPassword((contentValues.getAsString(LoginConst.PASSWORD)));
         login.setUser(contentValues.getAsString(LoginConst.USERNAME));
+        login.setUser(contentValues.getAsString(LoginConst.CLIENTNUMBER));
 
 
         return login;

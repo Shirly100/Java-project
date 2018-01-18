@@ -11,7 +11,9 @@ tools:context="com.example.shirly.takego.controller.MenuActivity">
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:weightSum="1">
+        android:weightSum="1"
+
+        >
 
         <Button
             android:id="@+id/addClientButton"
@@ -19,65 +21,90 @@ tools:context="com.example.shirly.takego.controller.MenuActivity">
             android:layout_height="wrap_content"
             android:onClick="onClick"
             android:text="Add Client"
-            android:textSize='20sp'/>
+            android:textSize='20sp'
+            android:textColor="#fff"
+            android:background="@color/red3"
+
+            />
 
         <Button
+            android:layout_marginTop="10dp"
             android:id="@+id/addCarModelButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onClick"
             android:text="Add Car Model"
-            android:textSize='20sp'/>
+            android:textSize='20sp'
+            android:textColor="#fff"
+            android:background="@color/red3"/>
 
 
         <Button
+            android:layout_marginTop="10dp"
+            android:background="@color/red3"
             android:id="@+id/addCarButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onClick"
             android:text="Add Car"
-            android:textSize='20sp'/>
+            android:textSize='20sp'
+            android:textColor="#fff"/>
 
         <Button
+            android:layout_marginTop="10dp"
+            android:background="@color/red3"
             android:id="@+id/addBranchButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onClick"
             android:text="Add Branch"
-            android:textSize='20sp'/>
+            android:textSize='20sp'
+            android:textColor="#fff"/>
 
         <Button
+            android:background="@color/red3"
             android:id="@+id/showBranchesListButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:onClick="onClick"
             android:text="Show branches List"
-            android:textSize='20sp'/>
+            android:textSize='20sp'
+            android:textColor="#fff"/>
 
         <Button
+            android:layout_marginTop="10dp"
+            android:background="@color/red3"
             android:id="@+id/showCarListButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Show cars List"
             android:onClick="onClick"
-            android:textSize='20sp'/>
+            android:textSize='20sp'
+            android:textColor="#fff"
+          />
 
 
         <Button
+            android:layout_marginTop="10dp"
+            android:background="@color/red3"
             android:id="@+id/showModelListButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Show models List"
-            android:textSize='20sp'/>
+            android:textSize='20sp'
+            android:textColor="#fff"/>
 
         <Button
+            android:layout_marginTop="10dp"
+            android:background="@color/red3"
             android:id="@+id/showClientListButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onClick"
             android:text="Show clients List"
-            android:textSize='20sp'/>
+            android:textSize='20sp'
+            android:textColor="#fff"/>
 
 
     </LinearLayout>
