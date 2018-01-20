@@ -40,6 +40,7 @@ public interface ICarManager
      String updateOrder(ContentValues values);
     String getAddressLink(long id);
    boolean getClosedOrders();
+   List<Car> getAvailableCars();
 
 
 

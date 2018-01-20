@@ -204,5 +204,6 @@ public class List_CarManager implements ICarManager
     public String updateOrder(ContentValues values){return null;}
     public  String getAddressLink(long id){return null;}
     public boolean getClosedOrders(){return false;}
+    public List<Car> getAvailableCars(){return null;}
 
 }

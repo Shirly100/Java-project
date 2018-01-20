@@ -541,6 +541,38 @@ public class MySQL_DBManager implements ICarManager{
 
 
 
+    @Override
+    public List<Car> getAvailableCars(){
+        List<Car> result = new ArrayList<Car>();
+
+        try {
+
+            String str = PHPtools.GET(WEB_URL + "/getAvailableCars.php");
+            JSONArray array = new JSONObject(str).getJSONArray("cars");
+
+
+            for (int i = 0; i < array.length(); i++) {
+                JSONObject jsonObject = array.getJSONObject(i);
+
+                Car car = new Car();
+                car.setCarNumber(jsonObject.getInt("carNumber"));
+                car.setBranchNumber(jsonObject.getInt("branchNumber"));
+                car.setModelType(jsonObject.getString("modelType"));
+                float value = Float.valueOf(jsonObject.getString("mileage"));
+                car.setMileage(value);
+                car.setOccupied(Enums.Answer.valueOf(jsonObject.getString("occupied")));
+
+                result.add(car);
+            }
+            return result;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
+
 
 
 }
