@@ -37,7 +37,10 @@ public class MyService extends IntentService {
 
     }
 
-    
+
+    /**
+     * @param intent
+     */
     @Override
     protected void onHandleIntent(Intent intent) {
 
