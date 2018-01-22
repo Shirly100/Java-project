@@ -21,7 +21,7 @@ import com.example.shirly.takego.model.entities.Enums;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//The AddCarModelActivity inserts the data from the user to the models table in the database
 public class AddCarModelActivity extends Activity implements View.OnClickListener {
 
     @Override
@@ -53,7 +53,10 @@ public class AddCarModelActivity extends Activity implements View.OnClickListene
     private Spinner spinnerAirBags;
     private Spinner spinnerBrake;
 
-
+    /**
+     * The function onClick handle the click event
+     * @param v
+     */
     @Override
     public void onClick(View v) {
         if (v == addCarModelButton1) {
@@ -62,7 +65,10 @@ public class AddCarModelActivity extends Activity implements View.OnClickListene
 
         }
     }
-
+    /**
+     * The function addCarModel takes the information that the user insert into the textViews and add it to the models table in
+     * the database
+     */
     private void addCarModel() {
         final ContentValues contentValues = new ContentValues();
         try {

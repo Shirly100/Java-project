@@ -20,7 +20,7 @@ import com.example.shirly.takego.model.entities.Car;
 import com.example.shirly.takego.model.entities.Enums;
 
 import static com.example.shirly.takego.R.id.addCarButton1;
-
+//The AddCarActivity inserts the data from the user to the cars table in the database
 public class AddCarActivity extends Activity implements View.OnClickListener{
 
     @Override
@@ -38,7 +38,10 @@ public class AddCarActivity extends Activity implements View.OnClickListener{
     private Button addCarButton1;
 
 
-
+    /**
+     * The function onClick handle the click event
+     * @param v
+     */
     @Override
     public void onClick(View v) {
         if ( v == addCarButton1 )
@@ -49,7 +52,10 @@ public class AddCarActivity extends Activity implements View.OnClickListener{
 
 
 
-
+    /**
+     * The function addCar takes the information that the user insert into the textViews and add it to the cars table in
+     * the database
+     */
     private void addCar() {
         final ContentValues contentValues = new ContentValues();
         try {
@@ -63,7 +69,7 @@ public class AddCarActivity extends Activity implements View.OnClickListener{
             contentValues.put(CarConst.CarsConst.OCCUPIED, this.occupied.getSelectedItem().toString());
 
 
-
+//the AsyncTask handle the insertion of the information into the database
             new AsyncTask<Void, Void, Long>() {
                 @Override     protected void onPostExecute(Long carNumber) {
                     super.onPostExecute(carNumber);

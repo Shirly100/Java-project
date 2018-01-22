@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.shirly.takego.R;
-
+//The MenuActivity handle all the options of the application: add information to the database and show the information
 public class MenuActivity extends Activity  implements View.OnClickListener
 {
 
@@ -19,7 +19,6 @@ public class MenuActivity extends Activity  implements View.OnClickListener
     private Button showCarListButton;
     private Button showModelListButton;
     private Button showClientListButton;
-
 
 
 
@@ -56,7 +55,10 @@ public class MenuActivity extends Activity  implements View.OnClickListener
 
     }
 
-
+    /**
+     * The function onClick handle all the click events
+     * @param v
+     */
     @Override
     public void onClick(View v) {
         if ( v == addClientButton ) {

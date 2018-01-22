@@ -17,7 +17,7 @@ import com.example.shirly.takego.model.backend.factory_dal;
 import com.example.shirly.takego.model.entities.Client;
 
 import static com.example.shirly.takego.model.backend.CarConst.ContentValuesToClient;
-
+//The AddClientActivity inserts the data from the user to the client table in the database
 public class AddClientActivity extends Activity implements View.OnClickListener {
 
     private EditText lastNameEditText;
@@ -28,7 +28,10 @@ public class AddClientActivity extends Activity implements View.OnClickListener 
     private EditText cardNumberEditText;
     private Button addClientButton1;
 
-
+    /**
+     * The function onClick handle the click event
+     * @param v
+     */
     @Override
     public void onClick(View v) {
         if (v == addClientButton1) {
@@ -53,7 +56,10 @@ public class AddClientActivity extends Activity implements View.OnClickListener 
         cardNumberEditText= (EditText)findViewById( R.id.cardNumberEditText);
         addClientButton1 = (Button)findViewById( R.id.addClientButton1 );
         addClientButton1.setOnClickListener( this );     }
-
+    /**
+     * The function addClient takes the information that the user insert into the textViews and add it to the clients table in
+     * the database
+     */
     private void addClient() {
         final ContentValues contentValues = new ContentValues();
         try {

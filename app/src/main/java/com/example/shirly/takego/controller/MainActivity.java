@@ -18,7 +18,7 @@ import com.example.shirly.takego.R;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
-
+//The first page of the application-the logo and a button to start the application
 public class MainActivity extends Activity implements View.OnClickListener {
 
     private Button button;

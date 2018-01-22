@@ -19,7 +19,9 @@ import com.example.shirly.takego.model.entities.Login;
 import java.util.List;
 
 import static com.example.shirly.takego.R.id.lastNameEditText;
-
+//The LoginActivity handle the log in of the user to the application
+//The user inserts a Username and password. then there is a validation of  the information, if the password or username are wrongs
+//there will be a toat message
 public class LoginActivity extends Activity implements View.OnClickListener{
 
     Button bLogin;
@@ -37,6 +39,11 @@ public class LoginActivity extends Activity implements View.OnClickListener{
         bLogin.setOnClickListener(this);
         tvRegisterLink.setOnClickListener(this);
     }
+    /**
+     * The function onClick handle the click event
+     * @param v
+     */
+
     @Override
     public void onClick(View v) {
         if (v == bLogin) {

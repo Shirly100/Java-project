@@ -103,6 +103,8 @@ public class LoginActivity extends Activity implements View.OnClickListener{
                         {
                             Toast.makeText(getBaseContext(), "not in sharedPreferences", Toast.LENGTH_LONG).show();
                             saveSharedPreferences();
+                            Intent intent = new Intent(LoginActivity.this, Main2Activity.class);
+                            startActivity(intent);
 
                         }
                         else {

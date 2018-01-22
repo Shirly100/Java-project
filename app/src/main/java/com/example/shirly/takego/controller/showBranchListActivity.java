@@ -16,7 +16,7 @@ import com.example.shirly.takego.model.backend.factory_dal;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//The showBranchListActivity shows in listview all the branches from the database
 public class showBranchListActivity extends Activity {
 
 
@@ -29,7 +29,7 @@ public class showBranchListActivity extends Activity {
 
 
 
-
+//the AsyncTask handle the extraction of the information from the database
         new AsyncTask<String, Void, List<String>>() {
             List<String> list = new ArrayList<>();
             @Override

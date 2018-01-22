@@ -14,7 +14,7 @@ import android.widget.Toast;
 import com.example.shirly.takego.R;
 import com.example.shirly.takego.model.backend.CarConst;
 import com.example.shirly.takego.model.backend.factory_dal;
-
+//The AddBranchActivity inserts the data from the user to the branches table in the database
 public class AddBranchActivity extends Activity implements View.OnClickListener{
 
     private EditText cityEditText;
@@ -24,12 +24,18 @@ public class AddBranchActivity extends Activity implements View.OnClickListener{
     private EditText parkingEditText;
     private Button addBranchButton1;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_branch);
         findViews();
     }
+
+    /**
+     * The function onClick handle the click event
+     * @param v
+     */
 
     @Override
     public void onClick(View v) {
@@ -39,7 +45,10 @@ public class AddBranchActivity extends Activity implements View.OnClickListener{
         }
     }
 
-
+    /**
+     * The function addBranch takes the information that the user insert into the textView and add it to the branches table in
+     * the database
+     */
     private void addBranch() {
         final ContentValues contentValues = new ContentValues();
         try {
@@ -53,7 +62,7 @@ public class AddBranchActivity extends Activity implements View.OnClickListener{
             contentValues.put(CarConst.BranchConst.NUMBER, number);
 
 
-
+//the AsyncTask handle the insertion of the information into the database
             new AsyncTask<Void, Void, Integer>() {
                 @Override
                 protected void onPostExecute(Integer branchNumber) {

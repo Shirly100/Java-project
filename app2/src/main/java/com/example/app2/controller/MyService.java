@@ -51,7 +51,7 @@ public class MyService extends IntentService {
 
         Timer t = new Timer();
         t.schedule(new TimerTask() {
-            int size=factory_dal.get_dal().getCars().size();
+         int size=factory_dal.get_dal().getCars().size();
             @Override
             public void run() {
 
