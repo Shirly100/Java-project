@@ -1,4 +1,5 @@
 # Take-Go
+You can find much more details in the file "java report.dox"
 This is an Android Studio Project.
 The project includes two apps for the renting car company-"Take&Go".
 The company have cars on parking spaces all over the country.
